@@ -1,0 +1,6 @@
+framework module Pods_SummitUIAppNew_WatchKit_App {
+  umbrella header "Pods-SummitUIAppNew WatchKit App-umbrella.h"
+
+  export *
+  module * { export * }
+}

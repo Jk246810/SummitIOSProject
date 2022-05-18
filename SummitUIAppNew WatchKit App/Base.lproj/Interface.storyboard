@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14256" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="19455" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14243"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14219"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19454"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SummitUIAppNew_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <textField width="1" alignment="left" placeholder="Username" id="txO-CT-yJJ">
+                            <connections>
+                                <action selector="usernameTextField:" destination="AgC-eL-Hgc" id="7tU-Mj-DxS"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="left" placeholder="Password" id="5Mg-Br-eXY">
+                            <connections>
+                                <action selector="passwordTextField:" destination="AgC-eL-Hgc" id="Z7m-UD-WVQ"/>
+                            </connections>
+                        </textField>
+                        <button width="1" alignment="left" title="Sign In" id="c1S-m8-RYJ">
+                            <connections>
+                                <action selector="signInActivated" destination="AgC-eL-Hgc" id="DfL-f0-E4V"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="118" y="132"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -32,16 +52,45 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="SummitUIAppNew_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="Niz-AI-uX2">
             <objects>
-                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="SummitUIAppNew_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+        <!--MedicationLogController-->
+        <scene sceneID="mXE-78-WJu">
+            <objects>
+                <controller identifier="MedicationLogController" fullScreen="YES" id="i3p-xB-G2H" customClass="MedicationLogController" customModule="SummitUIAppNew_WatchKit_Extension">
+                    <items>
+                        <textField width="1" alignment="center" verticalAlignment="center" placeholder="Medication " id="fet-tF-67o">
+                            <connections>
+                                <action selector="medicationField:" destination="i3p-xB-G2H" id="VhO-Lt-GvR"/>
+                            </connections>
+                        </textField>
+                        <textField width="1" alignment="center" verticalAlignment="center" placeholder="Dosage(mg)" id="SzY-Q7-mo6">
+                            <connections>
+                                <action selector="dosageField:" destination="i3p-xB-G2H" id="cbu-Ck-Qtd"/>
+                            </connections>
+                        </textField>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Log" id="y73-Nm-NC9">
+                            <connections>
+                                <action selector="LogMedication" destination="i3p-xB-G2H" id="zhT-2T-NWI"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="dosageFieldOutlet" destination="SzY-Q7-mo6" id="CjV-re-Y9e"/>
+                        <outlet property="medicationFieldOutlet" destination="fet-tF-67o" id="kcd-IA-oFN"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="387" y="60"/>
         </scene>
     </scenes>
 </document>

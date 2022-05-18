@@ -1,0 +1,6 @@
+framework module Pods_SummitUIAppNew_SummitUIAppNewUITests {
+  umbrella header "Pods-SummitUIAppNew-SummitUIAppNewUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

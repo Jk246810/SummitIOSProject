@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3337AC1A591063F703AE09CA /* Pods_SummitUIAppNew_WatchKit_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BFCE01FC3A361D10CBA30C7 /* Pods_SummitUIAppNew_WatchKit_AppTests.framework */; };
+		38196F8E6E7BB835EAE10FAA /* Pods_SummitUIAppNew_SummitUIAppNew_WatchKit_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56ACC3FD9A1C3AF5453AC082 /* Pods_SummitUIAppNew_SummitUIAppNew_WatchKit_AppUITests.framework */; };
+		4A62BA242C783961C5AF4401 /* Pods_SummitUIAppNew_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D131EB379822C47EAD5EF3F3 /* Pods_SummitUIAppNew_WatchKit_Extension.framework */; };
+		6A8AFF39A7DA98DBF9AB8875 /* Pods_SummitUIAppNew_SummitUIAppNewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99AA598589F7587DD46BD6E /* Pods_SummitUIAppNew_SummitUIAppNewUITests.framework */; };
 		7B09B70827456AD200AEBA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B70727456AD200AEBA75 /* AppDelegate.swift */; };
 		7B09B70A27456AD200AEBA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B70927456AD200AEBA75 /* SceneDelegate.swift */; };
-		7B09B70C27456AD200AEBA75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B70B27456AD200AEBA75 /* ViewController.swift */; };
 		7B09B70F27456AD200AEBA75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B09B70D27456AD200AEBA75 /* Main.storyboard */; };
 		7B09B71127456AD500AEBA75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B09B71027456AD500AEBA75 /* Assets.xcassets */; };
 		7B09B71427456AD500AEBA75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B09B71227456AD500AEBA75 /* LaunchScreen.storyboard */; };
@@ -19,7 +22,6 @@
 		7B09B72F27456AD500AEBA75 /* SummitUIAppNew WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7B09B72E27456AD500AEBA75 /* SummitUIAppNew WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7B09B73527456AD500AEBA75 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B09B73327456AD500AEBA75 /* Interface.storyboard */; };
 		7B09B73727456AD600AEBA75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B09B73627456AD600AEBA75 /* Assets.xcassets */; };
-		7B09B73D27456AD700AEBA75 /* SummitUIAppNew WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B09B73C27456AD700AEBA75 /* SummitUIAppNew WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7B09B74227456AD700AEBA75 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B74127456AD700AEBA75 /* InterfaceController.swift */; };
 		7B09B74427456AD700AEBA75 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B74327456AD700AEBA75 /* ExtensionDelegate.swift */; };
 		7B09B74627456AD700AEBA75 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B74527456AD700AEBA75 /* NotificationController.swift */; };
@@ -28,6 +30,16 @@
 		7B09B75627456AD800AEBA75 /* SummitUIAppNew_WatchKit_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B75527456AD800AEBA75 /* SummitUIAppNew_WatchKit_AppTests.swift */; };
 		7B09B76027456AD800AEBA75 /* SummitUIAppNew_WatchKit_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B75F27456AD800AEBA75 /* SummitUIAppNew_WatchKit_AppUITests.swift */; };
 		7B09B76227456AD800AEBA75 /* SummitUIAppNew_WatchKit_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B76127456AD800AEBA75 /* SummitUIAppNew_WatchKit_AppUITestsLaunchTests.swift */; };
+		7B09B77D27456DC800AEBA75 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B77C27456DC800AEBA75 /* SignInViewController.swift */; };
+		7B09B788274576E800AEBA75 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B787274576E800AEBA75 /* HomeViewController.swift */; };
+		7B2BECBD278E461100A58C79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B2BECBC278E461100A58C79 /* GoogleService-Info.plist */; };
+		7B2BECC3278E46F600A58C79 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B2BECC2278E46F600A58C79 /* GoogleService-Info.plist */; };
+		7B2BECC9278E5E2100A58C79 /* MedicationLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BECC8278E5E2100A58C79 /* MedicationLogController.swift */; };
+		7BB640A427E2AADF00C9E2D2 /* SummitUIAppNew WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B09B73C27456AD700AEBA75 /* SummitUIAppNew WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7BF5041927E9766F00F1AD23 /* PhoneConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5041827E9766F00F1AD23 /* PhoneConnection.swift */; };
+		B297D30A82523AE3DEC73B67 /* Pods_SummitUIAppNewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED71626FA00D1C175BE757D9 /* Pods_SummitUIAppNewTests.framework */; };
+		BBA46FC95D2CB600BC1A2263 /* Pods_SummitUIAppNew_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8060F1EF9E28FC7A8A9635DA /* Pods_SummitUIAppNew_WatchKit_App.framework */; };
+		C4A803D744F274A6A57AC54A /* Pods_SummitUIAppNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CAA3A87253D6E2E32037EDA /* Pods_SummitUIAppNew.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,13 +64,6 @@
 			remoteGlobalIDString = 7B09B72D27456AD500AEBA75;
 			remoteInfo = "SummitUIAppNew WatchKit App";
 		};
-		7B09B73E27456AD700AEBA75 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7B09B6FC27456AD100AEBA75 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7B09B73B27456AD700AEBA75;
-			remoteInfo = "SummitUIAppNew WatchKit Extension";
-		};
 		7B09B75227456AD800AEBA75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7B09B6FC27456AD100AEBA75 /* Project object */;
@@ -73,20 +78,16 @@
 			remoteGlobalIDString = 7B09B72D27456AD500AEBA75;
 			remoteInfo = "SummitUIAppNew WatchKit App";
 		};
+		7BB640A527E2AADF00C9E2D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B09B6FC27456AD100AEBA75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B09B73B27456AD700AEBA75;
+			remoteInfo = "SummitUIAppNew WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7B09B76827456AD800AEBA75 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				7B09B73D27456AD700AEBA75 /* SummitUIAppNew WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7B09B76C27456AD800AEBA75 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,13 +99,30 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7BB640A727E2AADF00C9E2D2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7BB640A427E2AADF00C9E2D2 /* SummitUIAppNew WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F70A97852745C48920D67A5 /* Pods-SummitUIAppNew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew.release.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew/Pods-SummitUIAppNew.release.xcconfig"; sourceTree = "<group>"; };
+		20A8DC2033D54A598BD50C51 /* Pods-SummitUIAppNew WatchKit AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew WatchKit AppTests.debug.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew WatchKit AppTests/Pods-SummitUIAppNew WatchKit AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		499F9E5F72F2388E674A5287 /* Pods-SummitUIAppNew WatchKit AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew WatchKit AppTests.release.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew WatchKit AppTests/Pods-SummitUIAppNew WatchKit AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		49B629804D0123DD447A5E19 /* Pods-SummitUIAppNew-SummitUIAppNewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew-SummitUIAppNewUITests.debug.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		56ACC3FD9A1C3AF5453AC082 /* Pods_SummitUIAppNew_SummitUIAppNew_WatchKit_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummitUIAppNew_SummitUIAppNew_WatchKit_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F5AFC2CB5F3067A9FFB39F7 /* Pods-SummitUIAppNew WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		766C6B11552253E3C6B3D796 /* Pods-SummitUIAppNew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew.debug.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew/Pods-SummitUIAppNew.debug.xcconfig"; sourceTree = "<group>"; };
 		7B09B70427456AD200AEBA75 /* SummitUIAppNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SummitUIAppNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B09B70727456AD200AEBA75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B09B70927456AD200AEBA75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7B09B70B27456AD200AEBA75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B09B70E27456AD200AEBA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B09B71027456AD500AEBA75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B09B71327456AD500AEBA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,6 +148,31 @@
 		7B09B75B27456AD800AEBA75 /* SummitUIAppNew WatchKit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SummitUIAppNew WatchKit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B09B75F27456AD800AEBA75 /* SummitUIAppNew_WatchKit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummitUIAppNew_WatchKit_AppUITests.swift; sourceTree = "<group>"; };
 		7B09B76127456AD800AEBA75 /* SummitUIAppNew_WatchKit_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummitUIAppNew_WatchKit_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7B09B77C27456DC800AEBA75 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		7B09B780274571F500AEBA75 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B09B7842745720B00AEBA75 /* FirebaseFirestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseFirestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B09B787274576E800AEBA75 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7B2BECB327868CD100A58C79 /* SummitUIAppNew.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SummitUIAppNew.entitlements; sourceTree = "<group>"; };
+		7B2BECB427868D3300A58C79 /* SummitUIAppNew WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SummitUIAppNew WatchKit App.entitlements"; sourceTree = "<group>"; };
+		7B2BECB527868F1D00A58C79 /* SummitUIAppNew WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SummitUIAppNew WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		7B2BECBC278E461100A58C79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7B2BECC2278E46F600A58C79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../untitled folder/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7B2BECC8278E5E2100A58C79 /* MedicationLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationLogController.swift; sourceTree = "<group>"; };
+		7BF5041827E9766F00F1AD23 /* PhoneConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnection.swift; sourceTree = "<group>"; };
+		7CAA3A87253D6E2E32037EDA /* Pods_SummitUIAppNew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummitUIAppNew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8060F1EF9E28FC7A8A9635DA /* Pods_SummitUIAppNew_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummitUIAppNew_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BFCE01FC3A361D10CBA30C7 /* Pods_SummitUIAppNew_WatchKit_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummitUIAppNew_WatchKit_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4ACF699E3EB3074CFE6C658 /* Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests.release.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B5F91D809EECC6474DD72485 /* Pods-SummitUIAppNew WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew WatchKit App/Pods-SummitUIAppNew WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		B99AA598589F7587DD46BD6E /* Pods_SummitUIAppNew_SummitUIAppNewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummitUIAppNew_SummitUIAppNewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDB34929232836A5430F66E3 /* Pods-SummitUIAppNew WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew WatchKit App/Pods-SummitUIAppNew WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		CAF6C94F2E0947AC24CFECC0 /* Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF53F9980D10AD5815BD257E /* Pods-SummitUIAppNew-SummitUIAppNewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew-SummitUIAppNewUITests.release.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D131EB379822C47EAD5EF3F3 /* Pods_SummitUIAppNew_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummitUIAppNew_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2D1C70A38B83E3B8D1BD036 /* Pods-SummitUIAppNewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNewTests.debug.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNewTests/Pods-SummitUIAppNewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D6C079743596206B7DF1712F /* Pods-SummitUIAppNew WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		ED71626FA00D1C175BE757D9 /* Pods_SummitUIAppNewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummitUIAppNewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3D1B05914BE2B44C907B43F /* Pods-SummitUIAppNewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNewTests.release.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNewTests/Pods-SummitUIAppNewTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A803D744F274A6A57AC54A /* Pods_SummitUIAppNew.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B297D30A82523AE3DEC73B67 /* Pods_SummitUIAppNewTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A8AFF39A7DA98DBF9AB8875 /* Pods_SummitUIAppNew_SummitUIAppNewUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A62BA242C783961C5AF4401 /* Pods_SummitUIAppNew_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3337AC1A591063F703AE09CA /* Pods_SummitUIAppNew_WatchKit_AppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,12 +220,58 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38196F8E6E7BB835EAE10FAA /* Pods_SummitUIAppNew_SummitUIAppNew_WatchKit_AppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DF4BACD3212F12F0F98C8C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBA46FC95D2CB600BC1A2263 /* Pods_SummitUIAppNew_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29A8D468CC0FC145A166A235 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				766C6B11552253E3C6B3D796 /* Pods-SummitUIAppNew.debug.xcconfig */,
+				0F70A97852745C48920D67A5 /* Pods-SummitUIAppNew.release.xcconfig */,
+				BDB34929232836A5430F66E3 /* Pods-SummitUIAppNew WatchKit App.debug.xcconfig */,
+				B5F91D809EECC6474DD72485 /* Pods-SummitUIAppNew WatchKit App.release.xcconfig */,
+				20A8DC2033D54A598BD50C51 /* Pods-SummitUIAppNew WatchKit AppTests.debug.xcconfig */,
+				499F9E5F72F2388E674A5287 /* Pods-SummitUIAppNew WatchKit AppTests.release.xcconfig */,
+				D6C079743596206B7DF1712F /* Pods-SummitUIAppNew WatchKit Extension.debug.xcconfig */,
+				6F5AFC2CB5F3067A9FFB39F7 /* Pods-SummitUIAppNew WatchKit Extension.release.xcconfig */,
+				CAF6C94F2E0947AC24CFECC0 /* Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests.debug.xcconfig */,
+				A4ACF699E3EB3074CFE6C658 /* Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests.release.xcconfig */,
+				49B629804D0123DD447A5E19 /* Pods-SummitUIAppNew-SummitUIAppNewUITests.debug.xcconfig */,
+				CF53F9980D10AD5815BD257E /* Pods-SummitUIAppNew-SummitUIAppNewUITests.release.xcconfig */,
+				D2D1C70A38B83E3B8D1BD036 /* Pods-SummitUIAppNewTests.debug.xcconfig */,
+				F3D1B05914BE2B44C907B43F /* Pods-SummitUIAppNewTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2A5F44D979C7D7B4CC0AC313 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B09B7842745720B00AEBA75 /* FirebaseFirestore.framework */,
+				7B09B780274571F500AEBA75 /* FirebaseAuth.framework */,
+				7CAA3A87253D6E2E32037EDA /* Pods_SummitUIAppNew.framework */,
+				8060F1EF9E28FC7A8A9635DA /* Pods_SummitUIAppNew_WatchKit_App.framework */,
+				8BFCE01FC3A361D10CBA30C7 /* Pods_SummitUIAppNew_WatchKit_AppTests.framework */,
+				D131EB379822C47EAD5EF3F3 /* Pods_SummitUIAppNew_WatchKit_Extension.framework */,
+				56ACC3FD9A1C3AF5453AC082 /* Pods_SummitUIAppNew_SummitUIAppNew_WatchKit_AppUITests.framework */,
+				B99AA598589F7587DD46BD6E /* Pods_SummitUIAppNew_SummitUIAppNewUITests.framework */,
+				ED71626FA00D1C175BE757D9 /* Pods_SummitUIAppNewTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7B09B6FB27456AD100AEBA75 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +283,8 @@
 				7B09B75427456AD800AEBA75 /* SummitUIAppNew WatchKit AppTests */,
 				7B09B75E27456AD800AEBA75 /* SummitUIAppNew WatchKit AppUITests */,
 				7B09B70527456AD200AEBA75 /* Products */,
+				29A8D468CC0FC145A166A235 /* Pods */,
+				2A5F44D979C7D7B4CC0AC313 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,9 +305,12 @@
 		7B09B70627456AD200AEBA75 /* SummitUIAppNew */ = {
 			isa = PBXGroup;
 			children = (
+				7B2BECB327868CD100A58C79 /* SummitUIAppNew.entitlements */,
+				7B2BECBC278E461100A58C79 /* GoogleService-Info.plist */,
 				7B09B70727456AD200AEBA75 /* AppDelegate.swift */,
 				7B09B70927456AD200AEBA75 /* SceneDelegate.swift */,
-				7B09B70B27456AD200AEBA75 /* ViewController.swift */,
+				7B09B77C27456DC800AEBA75 /* SignInViewController.swift */,
+				7B09B787274576E800AEBA75 /* HomeViewController.swift */,
 				7B09B70D27456AD200AEBA75 /* Main.storyboard */,
 				7B09B71027456AD500AEBA75 /* Assets.xcassets */,
 				7B09B71227456AD500AEBA75 /* LaunchScreen.storyboard */,
@@ -240,6 +339,7 @@
 		7B09B73227456AD500AEBA75 /* SummitUIAppNew WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				7B2BECB427868D3300A58C79 /* SummitUIAppNew WatchKit App.entitlements */,
 				7B09B73327456AD500AEBA75 /* Interface.storyboard */,
 				7B09B73627456AD600AEBA75 /* Assets.xcassets */,
 			);
@@ -249,7 +349,11 @@
 		7B09B74027456AD700AEBA75 /* SummitUIAppNew WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7BF5041727E96A3400F1AD23 /* accelerometerData */,
+				7B2BECB527868F1D00A58C79 /* SummitUIAppNew WatchKit Extension.entitlements */,
+				7B2BECC2278E46F600A58C79 /* GoogleService-Info.plist */,
 				7B09B74127456AD700AEBA75 /* InterfaceController.swift */,
+				7B2BECC8278E5E2100A58C79 /* MedicationLogController.swift */,
 				7B09B74327456AD700AEBA75 /* ExtensionDelegate.swift */,
 				7B09B74527456AD700AEBA75 /* NotificationController.swift */,
 				7B09B74727456AD700AEBA75 /* ComplicationController.swift */,
@@ -277,6 +381,14 @@
 			path = "SummitUIAppNew WatchKit AppUITests";
 			sourceTree = "<group>";
 		};
+		7BF5041727E96A3400F1AD23 /* accelerometerData */ = {
+			isa = PBXGroup;
+			children = (
+				7BF5041827E9766F00F1AD23 /* PhoneConnection.swift */,
+			);
+			path = accelerometerData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -284,10 +396,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B09B76D27456AD800AEBA75 /* Build configuration list for PBXNativeTarget "SummitUIAppNew" */;
 			buildPhases = (
+				28B55D7C8A8DDE96E3D57896 /* [CP] Check Pods Manifest.lock */,
 				7B09B70027456AD200AEBA75 /* Sources */,
 				7B09B70127456AD200AEBA75 /* Frameworks */,
 				7B09B70227456AD200AEBA75 /* Resources */,
 				7B09B76C27456AD800AEBA75 /* Embed Watch Content */,
+				27CADC8684FCD189EC43F9AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +417,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B09B77027456AD800AEBA75 /* Build configuration list for PBXNativeTarget "SummitUIAppNewTests" */;
 			buildPhases = (
+				8E4B9FE84FCE3D6B4F6ED572 /* [CP] Check Pods Manifest.lock */,
 				7B09B71627456AD500AEBA75 /* Sources */,
 				7B09B71727456AD500AEBA75 /* Frameworks */,
 				7B09B71827456AD500AEBA75 /* Resources */,
@@ -321,9 +436,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B09B77327456AD800AEBA75 /* Build configuration list for PBXNativeTarget "SummitUIAppNewUITests" */;
 			buildPhases = (
+				BE1FCA63A8B3D77F248C2BC5 /* [CP] Check Pods Manifest.lock */,
 				7B09B72027456AD500AEBA75 /* Sources */,
 				7B09B72127456AD500AEBA75 /* Frameworks */,
 				7B09B72227456AD500AEBA75 /* Resources */,
+				8BE34D8FF52D96B9208EF2AF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,13 +456,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B09B76927456AD800AEBA75 /* Build configuration list for PBXNativeTarget "SummitUIAppNew WatchKit App" */;
 			buildPhases = (
+				3939E0E97DC15551A2E5FF15 /* [CP] Check Pods Manifest.lock */,
 				7B09B72C27456AD500AEBA75 /* Resources */,
-				7B09B76827456AD800AEBA75 /* Embed App Extensions */,
+				9DF4BACD3212F12F0F98C8C5 /* Frameworks */,
+				7BB640A727E2AADF00C9E2D2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7B09B73F27456AD700AEBA75 /* PBXTargetDependency */,
+				7BB640A627E2AADF00C9E2D2 /* PBXTargetDependency */,
 			);
 			name = "SummitUIAppNew WatchKit App";
 			productName = "SummitUIAppNew WatchKit App";
@@ -356,9 +475,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B09B76527456AD800AEBA75 /* Build configuration list for PBXNativeTarget "SummitUIAppNew WatchKit Extension" */;
 			buildPhases = (
+				87438E5B4F095E96D0D256A7 /* [CP] Check Pods Manifest.lock */,
 				7B09B73827456AD700AEBA75 /* Sources */,
 				7B09B73927456AD700AEBA75 /* Frameworks */,
 				7B09B73A27456AD700AEBA75 /* Resources */,
+				B784539111946C99D86156E3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -373,6 +494,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B09B77627456AD800AEBA75 /* Build configuration list for PBXNativeTarget "SummitUIAppNew WatchKit AppTests" */;
 			buildPhases = (
+				DB5C6E5DDA21A5D04B6D4483 /* [CP] Check Pods Manifest.lock */,
 				7B09B74D27456AD800AEBA75 /* Sources */,
 				7B09B74E27456AD800AEBA75 /* Frameworks */,
 				7B09B74F27456AD800AEBA75 /* Resources */,
@@ -391,9 +513,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B09B77927456AD800AEBA75 /* Build configuration list for PBXNativeTarget "SummitUIAppNew WatchKit AppUITests" */;
 			buildPhases = (
+				EFB6A55FB4BF1B1AE08EBBB9 /* [CP] Check Pods Manifest.lock */,
 				7B09B75727456AD800AEBA75 /* Sources */,
 				7B09B75827456AD800AEBA75 /* Frameworks */,
 				7B09B75927456AD800AEBA75 /* Resources */,
+				0F3690F9147E465AFFEFD062 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -412,6 +536,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					SignInViewController,
+				);
 				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
@@ -472,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B09B71427456AD500AEBA75 /* LaunchScreen.storyboard in Resources */,
+				7B2BECBD278E461100A58C79 /* GoogleService-Info.plist in Resources */,
 				7B09B71127456AD500AEBA75 /* Assets.xcassets in Resources */,
 				7B09B70F27456AD200AEBA75 /* Main.storyboard in Resources */,
 			);
@@ -505,6 +633,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B09B74A27456AD800AEBA75 /* Assets.xcassets in Resources */,
+				7B2BECC3278E46F600A58C79 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,12 +653,238 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F3690F9147E465AFFEFD062 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27CADC8684FCD189EC43F9AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew/Pods-SummitUIAppNew-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew/Pods-SummitUIAppNew-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew/Pods-SummitUIAppNew-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28B55D7C8A8DDE96E3D57896 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SummitUIAppNew-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3939E0E97DC15551A2E5FF15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SummitUIAppNew WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87438E5B4F095E96D0D256A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SummitUIAppNew WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BE34D8FF52D96B9208EF2AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E4B9FE84FCE3D6B4F6ED572 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SummitUIAppNewTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B784539111946C99D86156E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE1FCA63A8B3D77F248C2BC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SummitUIAppNew-SummitUIAppNewUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB5C6E5DDA21A5D04B6D4483 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SummitUIAppNew WatchKit AppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFB6A55FB4BF1B1AE08EBBB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7B09B70027456AD200AEBA75 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B09B70C27456AD200AEBA75 /* ViewController.swift in Sources */,
+				7B09B77D27456DC800AEBA75 /* SignInViewController.swift in Sources */,
+				7B09B788274576E800AEBA75 /* HomeViewController.swift in Sources */,
 				7B09B70827456AD200AEBA75 /* AppDelegate.swift in Sources */,
 				7B09B70A27456AD200AEBA75 /* SceneDelegate.swift in Sources */,
 			);
@@ -558,8 +913,10 @@
 			files = (
 				7B09B74627456AD700AEBA75 /* NotificationController.swift in Sources */,
 				7B09B74827456AD700AEBA75 /* ComplicationController.swift in Sources */,
+				7BF5041927E9766F00F1AD23 /* PhoneConnection.swift in Sources */,
 				7B09B74427456AD700AEBA75 /* ExtensionDelegate.swift in Sources */,
 				7B09B74227456AD700AEBA75 /* InterfaceController.swift in Sources */,
+				7B2BECC9278E5E2100A58C79 /* MedicationLogController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,11 +955,6 @@
 			target = 7B09B72D27456AD500AEBA75 /* SummitUIAppNew WatchKit App */;
 			targetProxy = 7B09B73027456AD500AEBA75 /* PBXContainerItemProxy */;
 		};
-		7B09B73F27456AD700AEBA75 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7B09B73B27456AD700AEBA75 /* SummitUIAppNew WatchKit Extension */;
-			targetProxy = 7B09B73E27456AD700AEBA75 /* PBXContainerItemProxy */;
-		};
 		7B09B75327456AD800AEBA75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7B09B73B27456AD700AEBA75 /* SummitUIAppNew WatchKit Extension */;
@@ -612,6 +964,11 @@
 			isa = PBXTargetDependency;
 			target = 7B09B72D27456AD500AEBA75 /* SummitUIAppNew WatchKit App */;
 			targetProxy = 7B09B75C27456AD800AEBA75 /* PBXContainerItemProxy */;
+		};
+		7BB640A627E2AADF00C9E2D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B09B73B27456AD700AEBA75 /* SummitUIAppNew WatchKit Extension */;
+			targetProxy = 7BB640A527E2AADF00C9E2D2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -756,17 +1113,19 @@
 		};
 		7B09B76627456AD800AEBA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6C079743596206B7DF1712F /* Pods-SummitUIAppNew WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "SummitUIAppNew WatchKit Extension/SummitUIAppNew WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9CL97632BB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SummitUIAppNew WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "SummitUIAppNew WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = SummitUIAppNew_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = SummitUIAppNew_WatchKit_Extension.ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -781,23 +1140,25 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
 		7B09B76727456AD800AEBA75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F5AFC2CB5F3067A9FFB39F7 /* Pods-SummitUIAppNew WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "SummitUIAppNew WatchKit Extension/SummitUIAppNew WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9CL97632BB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SummitUIAppNew WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "SummitUIAppNew WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = SummitUIAppNew_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = SummitUIAppNew_WatchKit_Extension.ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -813,16 +1174,17 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
 		7B09B76A27456AD800AEBA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDB34929232836A5430F66E3 /* Pods-SummitUIAppNew WatchKit App.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SummitUIAppNew WatchKit App/SummitUIAppNew WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9CL97632BB;
@@ -839,16 +1201,17 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
 		7B09B76B27456AD800AEBA75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5F91D809EECC6474DD72485 /* Pods-SummitUIAppNew WatchKit App.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SummitUIAppNew WatchKit App/SummitUIAppNew WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9CL97632BB;
@@ -866,15 +1229,18 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
 		7B09B76E27456AD800AEBA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 766C6B11552253E3C6B3D796 /* Pods-SummitUIAppNew.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SummitUIAppNew/SummitUIAppNew.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9CL97632BB;
@@ -885,7 +1251,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -893,18 +1259,22 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jamee.SummitUIAppNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		7B09B76F27456AD800AEBA75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F70A97852745C48920D67A5 /* Pods-SummitUIAppNew.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SummitUIAppNew/SummitUIAppNew.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9CL97632BB;
@@ -915,7 +1285,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -923,16 +1293,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jamee.SummitUIAppNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		7B09B77127456AD800AEBA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2D1C70A38B83E3B8D1BD036 /* Pods-SummitUIAppNewTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -959,6 +1331,7 @@
 		};
 		7B09B77227456AD800AEBA75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3D1B05914BE2B44C907B43F /* Pods-SummitUIAppNewTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -986,6 +1359,7 @@
 		};
 		7B09B77427456AD800AEBA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49B629804D0123DD447A5E19 /* Pods-SummitUIAppNew-SummitUIAppNewUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1011,6 +1385,7 @@
 		};
 		7B09B77527456AD800AEBA75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF53F9980D10AD5815BD257E /* Pods-SummitUIAppNew-SummitUIAppNewUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1037,6 +1412,7 @@
 		};
 		7B09B77727456AD800AEBA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20A8DC2033D54A598BD50C51 /* Pods-SummitUIAppNew WatchKit AppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1063,6 +1439,7 @@
 		};
 		7B09B77827456AD800AEBA75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 499F9E5F72F2388E674A5287 /* Pods-SummitUIAppNew WatchKit AppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1090,6 +1467,7 @@
 		};
 		7B09B77A27456AD800AEBA75 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAF6C94F2E0947AC24CFECC0 /* Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1114,6 +1492,7 @@
 		};
 		7B09B77B27456AD800AEBA75 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4ACF699E3EB3074CFE6C658 /* Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
