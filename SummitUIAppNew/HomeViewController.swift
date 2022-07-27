@@ -10,22 +10,13 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 import WatchConnectivity
-import CoreMotion
 import UserNotifications
 import FirebaseMessaging
-//import SummitUIAppNew_WatchKit_Extension
-//import SummitUIAppNew_WatchKit_Extension
-
-struct Feedback{
-    var feedbackMessage = ""
-    var rating = 0
-}
 
 class HomeViewController: UIViewController, WCSessionDelegate {
     var user = Auth.auth().currentUser
     var db: Firestore!
-    //var recentlyUploadedData = [String]()
-    
+   
     @IBOutlet weak var CTMStatus: UIImageView!
     @IBOutlet weak var CTMBattery: UILabel!
     
@@ -148,18 +139,6 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                     "Notes":  userFeedback["Message"] as! String
                 ])
             }
-            /*retrieves accelerometer Data from Watch
-            if let accAllData = message["Accelerometer Data"] as? [String] {
-                
-                for dataVal in accAllData{
-                    self.recentlyUploadedData.append(dataVal)
-                }
-                //self.dataReceivedLabel.text = "Data Received"
-                let format = DateFormatter()
-                format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
-                //self.timeStampLabel.text = format.string(from: Date())
-            }
-            */
         }
     }
 }
