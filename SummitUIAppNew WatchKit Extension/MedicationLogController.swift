@@ -12,6 +12,7 @@ import FirebaseAuth
 import CoreMotion
 
 
+
 extension CMSensorDataList: Sequence {
   public func makeIterator() -> NSFastEnumerationIterator {
       return NSFastEnumerationIterator(self)
@@ -42,10 +43,10 @@ class MedicationLogController:
     
     
     @IBAction func medicationField(_ value: NSString?) {
-        medicationTextField = value! as String
+        medicationTextField = (value ?? " ") as String
     }
     @IBAction func dosageField(_ value: NSString?) {
-        dosageTextField = value! as String
+        dosageTextField = (value ?? " ") as String
     }
     @IBAction func LogMedication() {
         formatter1.dateFormat = "HH:mm E, d MMM y"
@@ -56,24 +57,21 @@ class MedicationLogController:
             
                         ]
         
-        
-
-        self.ref.child("users").child(user!.uid).child("medications").childByAutoId().setValue(medication) {
-            (error:Error?, ref:DatabaseReference) in
-            if let error = error {
-              print("Data could not be saved: \(error).")
-            } else {
-              print("Data saved successfully!")
-                
-                self.medicationFieldOutlet.setText("")
-                self.dosageFieldOutlet.setText("")
-            }
-          }
-        
+        if self.connector.send(key: "Medication", value: medication){
+            print("Send succeeded")
+        }else{
+            print("send failed")
+        }
+        print("current user")
+        print(user?.uid ?? "")
+       
+        self.medicationFieldOutlet.setText("")
+        self.dosageFieldOutlet.setText("")
     }
     
 
     override func willActivate() {
+        /*recording accelerometer data (deactivated for now -- pending approval from Duke to use sensors)
         let recorder = CMSensorRecorder()
         
         if CMSensorRecorder.isAccelerometerRecordingAvailable(){
@@ -132,6 +130,7 @@ class MedicationLogController:
             print("all data has been sent")
             lastparsedDate = now
             //update database
+         */
         
     }
     override func didDeactivate() {

@@ -23,7 +23,7 @@ class InterfaceController: WKInterfaceController {
     }
     override func didAppear(){
         if ((user) != nil){
-            self.pushController(withName: "MedicationLogController", context: nil)
+            self.pushController(withName: "MainMenuViewController", context: nil)
         }
     }
     
@@ -60,7 +60,7 @@ class InterfaceController: WKInterfaceController {
               return
             }
             print("\(user.email!) signed in")
-            self.pushController(withName: "MedicationLogController", context: nil)
+            self.pushController(withName: "MainMenuViewController", context: nil)
             
 
         }

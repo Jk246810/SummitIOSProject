@@ -11,15 +11,41 @@ import FirebaseAuth
 import FirebaseFirestore
 import WatchConnectivity
 import CoreMotion
+import UserNotifications
+import FirebaseMessaging
+//import SummitUIAppNew_WatchKit_Extension
+//import SummitUIAppNew_WatchKit_Extension
+
+struct Feedback{
+    var feedbackMessage = ""
+    var rating = 0
+}
 
 class HomeViewController: UIViewController, WCSessionDelegate {
     var user = Auth.auth().currentUser
     var db: Firestore!
-    var recentlyUploadedData = [String]()
+    //var recentlyUploadedData = [String]()
+    
+    @IBOutlet weak var CTMStatus: UIImageView!
+    @IBOutlet weak var CTMBattery: UILabel!
+    
+    @IBOutlet weak var INSStatus: UIImageView!
+    @IBOutlet weak var INSBattery: UILabel!
+    
+    @IBOutlet weak var TabletStatus: UIImageView!
+    @IBOutlet weak var TabletBattery: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        Messaging.messaging().token { token, error in
+          if let error = error {
+            print("Error fetching FCM registration token: \(error)")
+          } else if let token = token {
+            print("Remote FCM registration token: \(token)")
+              Firestore.firestore().collection("Users_Collection").document(Auth.auth().currentUser!.uid).setData([ "FCM_token": token ], merge: true)
+          }
+        }
+        print("current User: \(String(describing: user?.uid))")
         if (WCSession.isSupported()) {
             let session = WCSession.default
             session.delegate = self
@@ -28,8 +54,10 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         
         
         db = Firestore.firestore()
-        db.collection("Users_Collection").document(user!.uid).collection("Program_Collection").document("Listeners_Document")
-            .addSnapshotListener { documentSnapshot, error in
+        
+        
+        db.collection("Users_Collection").document(user!.uid).collection("AtHome_Collection").document("Battery_Status_Document").addSnapshotListener { documentSnapshot, error in
+            print("a value changed")
               guard let document = documentSnapshot else {
                 print("Error fetching document: \(error!)")
                 return
@@ -38,17 +66,56 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                 print("Document data was empty.")
                 return
               }
-                print("Current data: \(data)")
+            
+            guard let CTMbattery = data["CTM_Low_Battery"] as? Bool else {
+                return
             }
-        
-        db.collection("data").document("test").setData(["accelerometer readings": recentlyUploadedData]) { err in
-            if let err = err {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
+            guard let INSbattery = data["INS_Low_Battery"] as? Bool else{
+                return
             }
-        }
+            guard let computerbattery = data["Computer_Low_Battery"] as? Bool else{
+                return
+            }
+            
+            if(CTMbattery){
+                self.CTMStatus.tintColor = UIColor.red
+            }else{
+                self.CTMStatus.tintColor = UIColor.green
+            }
+            if(INSbattery){
+                self.INSStatus.tintColor = UIColor.red
+            }else{
+                self.INSStatus.tintColor = UIColor.green
+            }
+            if(computerbattery){
+                self.TabletStatus.tintColor = UIColor.red
+            }else{
+                self.TabletStatus.tintColor = UIColor.green
+            }
+            
+            }
+        //need to deactiate listener when app not in use
 
+
+    }
+    
+    @IBAction func buttonClicked(_ sender: Any) {
+        let content = UNMutableNotificationContent()
+        content.title = "LOW BATTERY"
+        content.body = "Connect devices to power source immediately"
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString,
+                    content: content, trigger: trigger)
+
+        // Schedule the request with the system.
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.add(request) { (error) in
+           if error != nil {
+               print("the following request did not work")
+              // Handle any errors.
+           }
+        }
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
@@ -66,6 +133,22 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
 
         DispatchQueue.main.async {
+            if let medData = message["Medication"] as? [String:String]{
+                let mess = "medication data accumulated: " + String(medData.count)
+                print(mess)
+                Firestore.firestore().collection("Users_Collection").document(self.user!.uid).collection("Medications").document().setData([
+                    "Medication": medData["Medication"] as Any,
+                    "Dosage":  medData["Dosage"] as Any,
+                    "Date":  medData["Date"] as Any
+                ])
+            }
+            if let userFeedback = message["Feedback"] as? [String:Any]{
+                Firestore.firestore().collection("Users_Collection").document(self.user!.uid).collection("Feedback").document().setData([
+                    "Rating": userFeedback["Rating"]as! Int,
+                    "Notes":  userFeedback["Message"] as! String
+                ])
+            }
+            /*retrieves accelerometer Data from Watch
             if let accAllData = message["Accelerometer Data"] as? [String] {
                 
                 for dataVal in accAllData{
@@ -76,7 +159,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                 format.dateFormat = "yyyy/MM/dd HH:mm:ss.SSS"
                 //self.timeStampLabel.text = format.string(from: Date())
             }
-            
+            */
         }
     }
 }

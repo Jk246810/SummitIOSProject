@@ -9,6 +9,7 @@ target 'SummitUIAppNew' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
+  pod 'FirebaseMessaging'
 
   target 'SummitUIAppNew WatchKit AppTests' do
     inherit! :search_paths

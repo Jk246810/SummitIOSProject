@@ -40,8 +40,9 @@ class SignInViewController: UIViewController {
 //           }
         
         if ((user) != nil){
-        //self.performSegue(withIdentifier: "signedIn", sender: self)
+            print("this is the user \(user?.uid)")
             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
+            viewController.isModalInPresentation = true
             self.present(viewController, animated: true, completion: nil)
         }
     }
@@ -63,11 +64,10 @@ class SignInViewController: UIViewController {
                         return
                       }
                       print("\(user.email!) created")
-                    // self.performSegue(withIdentifier: "signedIn", sender: self)
+            
             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
             self.present(viewController, animated: true, completion: nil)
 
-           
 
         }
         
@@ -82,8 +82,9 @@ class SignInViewController: UIViewController {
               return
             }
             print("\(user.email!) created")
-            //self.performSegue(withIdentifier: "signedIn", sender: self)
+            
             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
+            viewController.isModalInPresentation = true
             self.present(viewController, animated: true, completion: nil)
 
         }

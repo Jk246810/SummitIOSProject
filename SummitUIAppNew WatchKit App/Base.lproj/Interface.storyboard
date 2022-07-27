@@ -5,6 +5,7 @@
         <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -63,10 +64,74 @@
             </objects>
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
+        <!--FeedbackViewController-->
+        <scene sceneID="WhB-sL-nW2">
+            <objects>
+                <controller identifier="FeedbackViewController" id="ikR-YC-SfJ" customClass="FeedbackViewController" customModule="SummitUIAppNew_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Rating:" id="tdf-q1-Ztf"/>
+                        <group width="116" height="19" alignment="center" id="N0y-rn-g5E">
+                            <items>
+                                <button alignment="left" backgroundImage="star" catalog="system" id="Qx7-6R-7po">
+                                    <color key="backgroundColor" name="AccentColor"/>
+                                    <connections>
+                                        <action selector="star1Clicked" destination="ikR-YC-SfJ" id="aKC-xx-Y69"/>
+                                    </connections>
+                                </button>
+                                <button alignment="left" backgroundImage="star" catalog="system" id="6O3-yv-ice">
+                                    <color key="backgroundColor" name="AccentColor"/>
+                                    <connections>
+                                        <action selector="star2Clicked" destination="ikR-YC-SfJ" id="LrA-fP-qov"/>
+                                    </connections>
+                                </button>
+                                <button alignment="left" backgroundImage="star" catalog="system" id="R0S-oA-7Sg">
+                                    <color key="backgroundColor" name="AccentColor"/>
+                                    <connections>
+                                        <action selector="star3Clicked" destination="ikR-YC-SfJ" id="wrm-fc-ZZ4"/>
+                                    </connections>
+                                </button>
+                                <button alignment="left" backgroundImage="star" catalog="system" id="KEY-7M-eWd">
+                                    <color key="backgroundColor" name="AccentColor"/>
+                                    <connections>
+                                        <action selector="star4Clicked" destination="ikR-YC-SfJ" id="9FQ-Ko-o3T"/>
+                                    </connections>
+                                </button>
+                                <button height="219" alignment="left" backgroundImage="star" catalog="system" id="rpj-av-p4W">
+                                    <color key="backgroundColor" name="AccentColor"/>
+                                    <connections>
+                                        <action selector="star5Clicked" destination="ikR-YC-SfJ" id="1g8-Rs-i3V"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Message:" id="OGE-IX-4zA"/>
+                        <textField width="1" alignment="left" id="R66-1A-jfU">
+                            <connections>
+                                <action selector="MessageTextFieldInput:" destination="ikR-YC-SfJ" id="Ukt-W6-ndD"/>
+                            </connections>
+                        </textField>
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="Submit" id="lkv-3N-ADA">
+                            <connections>
+                                <action selector="SubmitClicked" destination="ikR-YC-SfJ" id="BR9-mO-fl8"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="feedbackMessageLabel" destination="R66-1A-jfU" id="8ar-VY-4eZ"/>
+                        <outlet property="star1" destination="Qx7-6R-7po" id="M5n-N6-bPm"/>
+                        <outlet property="star2" destination="6O3-yv-ice" id="o2v-wV-ldk"/>
+                        <outlet property="star3" destination="R0S-oA-7Sg" id="YIW-ZG-HOC"/>
+                        <outlet property="star4" destination="KEY-7M-eWd" id="rto-QO-5Ua"/>
+                        <outlet property="star5" destination="rpj-av-p4W" id="yqt-3J-Zda"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="922" y="371.5"/>
+        </scene>
         <!--MedicationLogController-->
         <scene sceneID="mXE-78-WJu">
             <objects>
-                <controller identifier="MedicationLogController" fullScreen="YES" id="i3p-xB-G2H" customClass="MedicationLogController" customModule="SummitUIAppNew_WatchKit_Extension">
+                <controller identifier="MedicationLogController" id="i3p-xB-G2H" customClass="MedicationLogController" customModule="SummitUIAppNew_WatchKit_Extension">
                     <items>
                         <textField width="1" alignment="center" verticalAlignment="center" placeholder="Medication " id="fet-tF-67o">
                             <connections>
@@ -90,7 +155,42 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="387" y="60"/>
+            <point key="canvasLocation" x="721" y="-52"/>
+        </scene>
+        <!--MainMenuViewController-->
+        <scene sceneID="mCZ-Of-Iza">
+            <objects>
+                <controller identifier="MainMenuViewController" fullBounds="YES" fullScreen="YES" id="1qd-S0-eTi" customClass="MainMenuViewController" customModule="SummitUIAppNew_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Log Medicaton" id="0gJ-gz-hfr">
+                            <connections>
+                                <action selector="signInActivated" destination="AgC-eL-Hgc" id="6OS-gy-ZpI"/>
+                                <segue destination="i3p-xB-G2H" kind="push" id="tsx-pc-4ow"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Give Feedback" id="Q3N-cZ-Py2">
+                            <connections>
+                                <action selector="signInActivated" destination="AgC-eL-Hgc" id="Ch1-Xi-juD"/>
+                                <segue destination="ikR-YC-SfJ" kind="push" id="uY0-PO-Fmv"/>
+                            </connections>
+                        </button>
+                        <label alignment="center" text="Play/Pause Sensors" id="2F0-eM-66v">
+                            <fontDescription key="font" type="system" pointSize="14"/>
+                        </label>
+                        <button width="50" height="50" alignment="center" backgroundImage="play.circle.fill" catalog="system" id="Y3N-Uq-RYp">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="370" y="32.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="star" catalog="system" width="128" height="115"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
