@@ -612,9 +612,6 @@ PODS:
     - FirebaseAnalytics (~> 9.1.0)
   - Firebase/CoreOnly (9.1.0):
     - FirebaseCore (= 9.1.0)
-  - Firebase/Database (9.1.0):
-    - Firebase/CoreOnly
-    - FirebaseDatabase (~> 9.1.0)
   - Firebase/Firestore (9.1.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 9.1.0)
@@ -653,9 +650,6 @@ PODS:
     - nanopb (< 2.30910.0, >= 2.30908.0)
   - FirebaseCoreInternal (9.1.0):
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
-  - FirebaseDatabase (9.1.0):
-    - FirebaseCore (~> 9.0)
-    - leveldb-library (~> 1.22)
   - FirebaseFirestore (9.1.0):
     - abseil/algorithm (~> 1.20211102.0)
     - abseil/base (~> 1.20211102.0)
@@ -791,13 +785,14 @@ PODS:
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.1.0)
+  - Swinject (2.8.1)
 
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
-  - Firebase/Database
   - Firebase/Firestore
   - FirebaseMessaging
+  - Swinject
 
 SPEC REPOS:
   trunk:
@@ -809,7 +804,6 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCoreInternal
-    - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseInstallations
     - FirebaseMessaging
@@ -823,6 +817,7 @@ SPEC REPOS:
     - Libuv-gRPC
     - nanopb
     - PromisesObjC
+    - Swinject
 
 SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
@@ -833,7 +828,6 @@ SPEC CHECKSUMS:
   FirebaseCore: b7bfc258e996eada23b3666bd6b9a22ca092acb8
   FirebaseCoreDiagnostics: 2dabba3412b23b524823325739f45e520f67d1e7
   FirebaseCoreInternal: f3c838ae0b41cd840bbf34f90debfede78d352e5
-  FirebaseDatabase: 6308b36dbc7725204a32f1ac638e730a9aabf5bc
   FirebaseFirestore: 20b1df7d65058b038745ecebb60f741a10e40a6f
   FirebaseInstallations: a91c74276b544524ce144c8315d8cdbce2dbe30b
   FirebaseMessaging: 0bf5caa621182ccc66ba3be3b15e68d800d98e9f
@@ -847,7 +841,8 @@ SPEC CHECKSUMS:
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: 99b6f43f9e1044bd87a95a60beff28c2c44ddb72
+  Swinject: 97112918bd7e0785dc2df7036213f3c8cbba6586
 
-PODFILE CHECKSUM: f36276935dcf5e780aa1a4f8365af23b2ce31016
+PODFILE CHECKSUM: a9577a8284267925c2234aa7a3636823dd662afa
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

@@ -32,22 +32,14 @@ class SignInViewController: UIViewController {
 
     {
         super.viewDidAppear(animated)
-        
-//        do {
-//             try Auth.auth().useUserAccessGroup("com.Jamee.SummitUIAppNew")
-//           } catch let error as NSError {
-//             print("Error changing user access group: %@", error)
-//           }
-        
+
         if ((user) != nil){
-            print("this is the user \(user?.uid)")
+           // print("this is the user \(user?.uid)")
             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
             viewController.isModalInPresentation = true
             self.present(viewController, animated: true, completion: nil)
         }
     }
-    
-    //implement a method that recieves watch data and rejects it because not signed in
     
     //This function handles creating an account for a user that does not exist
     @IBAction func createAccountClicked(_ sender: UIButton) {
@@ -60,7 +52,6 @@ class SignInViewController: UIViewController {
 
                       guard let user = authResult?.user, error == nil else {
                           print("authentication failed")
-                          print(password)
                         return
                       }
                       print("\(user.email!) created")

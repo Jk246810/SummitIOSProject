@@ -133,17 +133,17 @@
             <objects>
                 <controller identifier="MedicationLogController" id="i3p-xB-G2H" customClass="MedicationLogController" customModule="SummitUIAppNew_WatchKit_Extension">
                     <items>
-                        <textField width="1" alignment="center" verticalAlignment="center" placeholder="Medication " id="fet-tF-67o">
+                        <textField width="1" alignment="center" verticalAlignment="center" accessibilityIdentifier="medicationLabel" text="Livadopa" placeholder="Medication " id="fet-tF-67o">
                             <connections>
                                 <action selector="medicationField:" destination="i3p-xB-G2H" id="VhO-Lt-GvR"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="center" verticalAlignment="center" placeholder="Dosage(mg)" id="SzY-Q7-mo6">
+                        <textField width="1" alignment="center" verticalAlignment="center" accessibilityIdentifier="dosageLabel" placeholder="Dosage(mg)" id="SzY-Q7-mo6">
                             <connections>
                                 <action selector="dosageField:" destination="i3p-xB-G2H" id="cbu-Ck-Qtd"/>
                             </connections>
                         </textField>
-                        <button width="1" alignment="center" verticalAlignment="center" title="Log" id="y73-Nm-NC9">
+                        <button width="1" alignment="center" verticalAlignment="center" accessibilityIdentifier="logButton" title="Log" id="y73-Nm-NC9">
                             <connections>
                                 <action selector="LogMedication" destination="i3p-xB-G2H" id="zhT-2T-NWI"/>
                             </connections>
@@ -174,12 +174,6 @@
                                 <segue destination="ikR-YC-SfJ" kind="push" id="uY0-PO-Fmv"/>
                             </connections>
                         </button>
-                        <label alignment="center" text="Play/Pause Sensors" id="2F0-eM-66v">
-                            <fontDescription key="font" type="system" pointSize="14"/>
-                        </label>
-                        <button width="50" height="50" alignment="center" backgroundImage="play.circle.fill" catalog="system" id="Y3N-Uq-RYp">
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </button>
                     </items>
                 </controller>
             </objects>
@@ -187,7 +181,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <image name="star" catalog="system" width="128" height="115"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

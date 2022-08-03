@@ -26,6 +26,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     @IBOutlet weak var TabletStatus: UIImageView!
     @IBOutlet weak var TabletBattery: UILabel!
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         Messaging.messaging().token { token, error in
@@ -47,8 +48,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         db = Firestore.firestore()
         
         
-        db.collection("Users_Collection").document(user!.uid).collection("AtHome_Collection").document("Battery_Status_Document").addSnapshotListener { documentSnapshot, error in
-            print("a value changed")
+        db.collection("Users_Collection").document(user!.uid).collection("AtHome_Collection").document("Battery_Status_Document").addSnapshotListener{ documentSnapshot, error in
               guard let document = documentSnapshot else {
                 print("Error fetching document: \(error!)")
                 return
@@ -58,37 +58,40 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                 return
               }
             
-            guard let CTMbattery = data["CTM_Low_Battery"] as? Bool else {
+            guard let CTMbattery = data["CTM_Low_Battery"] as? Int else{
                 return
             }
-            guard let INSbattery = data["INS_Low_Battery"] as? Bool else{
+            guard let INSbattery = data["INS_Low_Battery"] as? Int else{
                 return
             }
-            guard let computerbattery = data["Computer_Low_Battery"] as? Bool else{
+            guard let computerbattery = data["Computer_Low_Battery"] as? Int else{
                 return
             }
+            self.handleBatteryStatus(ctmVal: CTMbattery, insVal: INSbattery, surfaceVal: computerbattery)
             
-            if(CTMbattery){
-                self.CTMStatus.tintColor = UIColor.red
-            }else{
-                self.CTMStatus.tintColor = UIColor.green
-            }
-            if(INSbattery){
-                self.INSStatus.tintColor = UIColor.red
-            }else{
-                self.INSStatus.tintColor = UIColor.green
-            }
-            if(computerbattery){
-                self.TabletStatus.tintColor = UIColor.red
-            }else{
-                self.TabletStatus.tintColor = UIColor.green
-            }
-            
-            }
-        //need to deactiate listener when app not in use
-
+        }
 
     }
+        
+    func batteryStatus(val: Int, image: UIImageView){
+        switch val{
+        case 0:
+            image.tintColor = UIColor.red
+        case 1:
+            image.tintColor = UIColor.yellow
+        case 2:
+            image.tintColor = UIColor.green
+        default:
+            image.tintColor = UIColor.gray
+        }
+    }
+    
+    func handleBatteryStatus(ctmVal: Int, insVal: Int, surfaceVal: Int){
+        batteryStatus(val: ctmVal, image: CTMStatus)
+        batteryStatus(val: insVal, image: INSStatus)
+        batteryStatus(val: surfaceVal, image: TabletStatus)
+    }
+    
     
     @IBAction func buttonClicked(_ sender: Any) {
         let content = UNMutableNotificationContent()
@@ -141,4 +144,5 @@ class HomeViewController: UIViewController, WCSessionDelegate {
             }
         }
     }
+        
 }

@@ -1,9 +1,3 @@
-//
-//  PhoneConnection.swift
-//  SummitUIAppNew WatchKit Extension
-//
-//  Created by Jamee Krzanich on 3/21/22.
-//
 
 import Foundation
 import UIKit
@@ -11,7 +5,9 @@ import WatchConnectivity
 
 class PhoneConnection: NSObject, ObservableObject, WCSessionDelegate {
     
-    override init() {
+    static let shared = PhoneConnection()
+    
+    private override init() {
         super.init()
         if WCSession.isSupported() {
             WCSession.default.delegate = self

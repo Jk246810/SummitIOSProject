@@ -61,7 +61,6 @@ class InterfaceController: WKInterfaceController {
             }
             print("\(user.email!) signed in")
             self.pushController(withName: "MainMenuViewController", context: nil)
-            
 
         }
     }

@@ -123,8 +123,13 @@ extension AppDelegate:UNUserNotificationCenterDelegate {
         }
         // Print full message.
         print(userInfo)
-        // Change this to your preferred presentation option
-        completionHandler([.alert])
+        
+            
+        if #available(iOS 14.0, *) {
+            completionHandler([.sound, .badge, .banner])
+        } else {
+            completionHandler([.sound, .badge])
+        }
     }
     
     //This method is to handle a notification that arrived while the app was not in foreground

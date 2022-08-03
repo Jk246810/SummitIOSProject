@@ -184,9 +184,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleDataTransport-watchOS/GoogleDataTransport.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities-df6f21d7/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC-watchOS/FBLPromises.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library-watchOS/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb-watchOS/nanopb.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FirebaseAuth-watchOS/FirebaseAuth.framework"
@@ -197,9 +195,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleDataTransport-watchOS/GoogleDataTransport.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities-df6f21d7/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC-watchOS/FBLPromises.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library-watchOS/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb-watchOS/nanopb.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

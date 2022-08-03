@@ -9,11 +9,13 @@ import WatchKit
 import Firebase
 import CoreMotion
 
+
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     var session: WKExtendedRuntimeSession!
     
     func applicationDidFinishLaunching() {
         FirebaseApp.configure()
+        _ = PhoneConnection.shared
         // Perform any final initialization of your application.
     }
 

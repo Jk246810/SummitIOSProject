@@ -15,7 +15,6 @@ struct Feedback{
 }
 
 class FeedbackViewController: WKInterfaceController {
-    var connector = PhoneConnection()
 
     @IBOutlet weak var star1: WKInterfaceButton!
     @IBOutlet weak var star2: WKInterfaceButton!
@@ -80,7 +79,7 @@ class FeedbackViewController: WKInterfaceController {
             "Rating": feedback.rating,
             "Message": feedback.feedbackMessage,
         ] as [String : Any]
-        if self.connector.send(key: "Feedback", value: submitFeedback){
+        if PhoneConnection.shared.send(key: "Feedback", value: submitFeedback){
             print("feedback submitted")
         }else{
             print("send failed")
