@@ -17,7 +17,7 @@ class MedicationLogController:
     
     @IBOutlet weak var dosageFieldOutlet: WKInterfaceTextField!
     
-    var user = Auth.auth().currentUser
+    lazy var user = Auth.auth().currentUser
     var medicationTextField="Livadopa"
     var dosageTextField=""
     
@@ -26,7 +26,7 @@ class MedicationLogController:
     
     
     @IBAction func medicationField(_ value: NSString?) {
-        medicationTextField = (value ?? "Livadopa") as String
+        medicationTextField = (value ?? " ") as String
     }
     @IBAction func dosageField(_ value: NSString?) {
         dosageTextField = (value ?? " ") as String
@@ -40,13 +40,24 @@ class MedicationLogController:
             
                         ]
         if PhoneConnection.shared.send(key: "Medication", value: medication){
-            print("Send succeeded")
+            successfullySent()
         }else{
-            print("send failed")
+            let action = WKAlertAction(title: "Send Failed", style: WKAlertActionStyle.default) {
+                    print("Ok")
+                }
+                presentAlert(withTitle: "Cannot reach phone", message: "Please check to ensure you are connected to your Phone ", preferredStyle: WKAlertControllerStyle.alert, actions:[action])
+           
         }
        
         self.medicationFieldOutlet.setText("Livadopa")
         self.dosageFieldOutlet.setText("")
+    }
+    
+    func successfullySent(){
+        let action = WKAlertAction(title: "Send Succeeded", style: WKAlertActionStyle.default) {
+                print("Ok")
+            }
+            presentAlert(withTitle: "Success!", message: "Your medication was successfully logged", preferredStyle: WKAlertControllerStyle.alert, actions:[action])
     }
     
 }

@@ -10,12 +10,12 @@ import Firebase
 import CoreMotion
 
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
-    var session: WKExtendedRuntimeSession!
+class ExtensionDelegate: NSObject/*, WKExtensionDelegate*/ {
+    //var session: WKExtendedRuntimeSession!
     
     func applicationDidFinishLaunching() {
         FirebaseApp.configure()
-        _ = PhoneConnection.shared
+        /*_ = PhoneConnection.shared*/
         // Perform any final initialization of your application.
     }
 

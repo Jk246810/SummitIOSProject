@@ -8,6 +8,10 @@
 import Foundation
 import WatchKit
 
-class MainMenuViewController: WKInterfaceController {
-    
+class MainMenuViewController: WKInterfaceController, WKExtensionDelegate {
+    var session: WKExtendedRuntimeSession!
+    override func willActivate() {
+        super.willActivate()
+        _ = PhoneConnection.shared
+    }
 }

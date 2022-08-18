@@ -14,14 +14,14 @@ class InterfaceController: WKInterfaceController {
     var usernameText: String = ""
     var passwordText: String = ""
     
-    var user = Auth.auth().currentUser
+    lazy var user = Auth.auth().currentUser
     override func awake(withContext context: Any?) {
-        
-       
+
         
         
     }
     override func didAppear(){
+        FirebaseApp.configure()
         if ((user) != nil){
             self.pushController(withName: "MainMenuViewController", context: nil)
         }

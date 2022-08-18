@@ -31,12 +31,13 @@
 		7B09B77D27456DC800AEBA75 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B77C27456DC800AEBA75 /* SignInViewController.swift */; };
 		7B09B788274576E800AEBA75 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B787274576E800AEBA75 /* HomeViewController.swift */; };
 		7B2BECC9278E5E2100A58C79 /* MedicationLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BECC8278E5E2100A58C79 /* MedicationLogController.swift */; };
+		7B7BD67228AE0CE80029C7ED /* MedicationOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7BD67128AE0CE80029C7ED /* MedicationOptionViewController.swift */; };
+		7B7BD67528AE380B0029C7ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BEAE1CA283DC576007C9A3B /* GoogleService-Info.plist */; };
 		7B7CED22289AAF42000A1AC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B09B74927456AD800AEBA75 /* Assets.xcassets */; };
 		7BB640A427E2AADF00C9E2D2 /* SummitUIAppNew WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B09B73C27456AD700AEBA75 /* SummitUIAppNew WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7BD1359D286CFA07001315CC /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1359C286CFA07001315CC /* MainMenuViewController.swift */; };
 		7BD1359F286D28A9001315CC /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1359E286D28A9001315CC /* FeedbackViewController.swift */; };
 		7BEAE1C6283DC418007C9A3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BEAE1C5283DC418007C9A3B /* GoogleService-Info.plist */; };
-		7BEAE1CB283DC576007C9A3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BEAE1CA283DC576007C9A3B /* GoogleService-Info.plist */; };
 		7BF04A532894484600615308 /* CredentialsValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF04A522894484600615308 /* CredentialsValidator.swift */; };
 		7BF04A552894486700615308 /* InjectableNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF04A542894486700615308 /* InjectableNotifications.swift */; };
 		7BF04A57289448CF00615308 /* SimpleCredentialsValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF04A56289448CF00615308 /* SimpleCredentialsValidator.swift */; };
@@ -167,6 +168,7 @@
 		7B2BECB427868D3300A58C79 /* SummitUIAppNew WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SummitUIAppNew WatchKit App.entitlements"; sourceTree = "<group>"; };
 		7B2BECB527868F1D00A58C79 /* SummitUIAppNew WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SummitUIAppNew WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		7B2BECC8278E5E2100A58C79 /* MedicationLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationLogController.swift; sourceTree = "<group>"; };
+		7B7BD67128AE0CE80029C7ED /* MedicationOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationOptionViewController.swift; sourceTree = "<group>"; };
 		7BCA29FD2CF86FA050140ABF /* Pods-SummitUIAppNew WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummitUIAppNew WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-SummitUIAppNew WatchKit App/Pods-SummitUIAppNew WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		7BD1359C286CFA07001315CC /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		7BD1359E286D28A9001315CC /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				7B09B74527456AD700AEBA75 /* NotificationController.swift */,
 				7B09B74727456AD700AEBA75 /* ComplicationController.swift */,
 				7BD1359C286CFA07001315CC /* MainMenuViewController.swift */,
+				7B7BD67128AE0CE80029C7ED /* MedicationOptionViewController.swift */,
 				7BD1359E286D28A9001315CC /* FeedbackViewController.swift */,
 				7B09B74927456AD800AEBA75 /* Assets.xcassets */,
 				7BEAE1CA283DC576007C9A3B /* GoogleService-Info.plist */,
@@ -436,7 +439,7 @@
 				7B09B70127456AD200AEBA75 /* Frameworks */,
 				7B09B70227456AD200AEBA75 /* Resources */,
 				7B09B76C27456AD800AEBA75 /* Embed Watch Content */,
-				94A8ECFD6692081CFB6F642E /* [CP] Embed Pods Frameworks */,
+				828144BF27DA41BAC96E2A9B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -475,7 +478,7 @@
 				7B09B72027456AD500AEBA75 /* Sources */,
 				7B09B72127456AD500AEBA75 /* Frameworks */,
 				7B09B72227456AD500AEBA75 /* Resources */,
-				A89B1E3EBB28B24947B091D5 /* [CP] Embed Pods Frameworks */,
+				E06B95D7B408FB1502A8503C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -514,7 +517,7 @@
 				7B09B73827456AD700AEBA75 /* Sources */,
 				7B09B73927456AD700AEBA75 /* Frameworks */,
 				7B09B73A27456AD700AEBA75 /* Resources */,
-				B3772685EC782A06482D6DFF /* [CP] Embed Pods Frameworks */,
+				FF9184C5BB8D21666DDD3F63 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -552,7 +555,7 @@
 				7B09B75727456AD800AEBA75 /* Sources */,
 				7B09B75827456AD800AEBA75 /* Frameworks */,
 				7B09B75927456AD800AEBA75 /* Resources */,
-				AF364B17BE93EA41D488FABE /* [CP] Embed Pods Frameworks */,
+				A4F5F8F5199F82628427CDDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -668,7 +671,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B7CED22289AAF42000A1AC2 /* Assets.xcassets in Resources */,
-				7BEAE1CB283DC576007C9A3B /* GoogleService-Info.plist in Resources */,
+				7B7BD67528AE380B0029C7ED /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,7 +736,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		94A8ECFD6692081CFB6F642E /* [CP] Embed Pods Frameworks */ = {
+		828144BF27DA41BAC96E2A9B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -750,24 +753,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew/Pods-SummitUIAppNew-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A89B1E3EBB28B24947B091D5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AF364B17BE93EA41D488FABE /* [CP] Embed Pods Frameworks */ = {
+		A4F5F8F5199F82628427CDDB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -782,23 +768,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3772685EC782A06482D6DFF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF45A1B35D2C84A4A1D40C36 /* [CP] Check Pods Manifest.lock */ = {
@@ -843,6 +812,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E06B95D7B408FB1502A8503C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E5064EA7497B38444B567FC7 /* [CP] Check Pods Manifest.lock */ = {
@@ -911,6 +897,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FF9184C5BB8D21666DDD3F63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -959,6 +962,7 @@
 				7BD1359F286D28A9001315CC /* FeedbackViewController.swift in Sources */,
 				7BD1359D286CFA07001315CC /* MainMenuViewController.swift in Sources */,
 				7B09B74427456AD700AEBA75 /* ExtensionDelegate.swift in Sources */,
+				7B7BD67228AE0CE80029C7ED /* MedicationOptionViewController.swift in Sources */,
 				7B09B74227456AD700AEBA75 /* InterfaceController.swift in Sources */,
 				7B2BECC9278E5E2100A58C79 /* MedicationLogController.swift in Sources */,
 			);
@@ -1162,7 +1166,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "SummitUIAppNew WatchKit Extension/SummitUIAppNew WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SummitUIAppNew WatchKit Extension/Info.plist";
@@ -1176,7 +1180,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JameeKrz.SummitUIAppNew.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1195,7 +1199,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "SummitUIAppNew WatchKit Extension/SummitUIAppNew WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SummitUIAppNew WatchKit Extension/Info.plist";
@@ -1209,7 +1213,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JameeKrz.SummitUIAppNew.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1230,14 +1234,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "SummitUIAppNew WatchKit App/SummitUIAppNew WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = SummitUIAppNew_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "SummitUIAppNew WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.JameeKrz.SummitUIAppNew;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JameeKrz.SummitUIAppNew.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1257,14 +1261,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "SummitUIAppNew WatchKit App/SummitUIAppNew WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = SummitUIAppNew_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "SummitUIAppNew WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.JameeKrz.SummitUIAppNew;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JameeKrz.SummitUIAppNew.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1286,7 +1290,7 @@
 				CODE_SIGN_ENTITLEMENTS = SummitUIAppNew/SummitUIAppNew.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SummitUIAppNew/Info.plist;
@@ -1301,7 +1305,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JameeKrz.SummitUIAppNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1321,7 +1325,7 @@
 				CODE_SIGN_ENTITLEMENTS = SummitUIAppNew/SummitUIAppNew.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SummitUIAppNew/Info.plist;
@@ -1336,7 +1340,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JameeKrz.SummitUIAppNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1355,7 +1359,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1364,7 +1368,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jamee.SummitUIAppNewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1382,7 +1386,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1391,7 +1395,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jamee.SummitUIAppNewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1409,7 +1413,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1418,7 +1422,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jamee.SummitUIAppNewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1435,7 +1439,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1444,7 +1448,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jamee.SummitUIAppNewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1463,7 +1467,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1471,7 +1475,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Jamee.SummitUIAppNew-WatchKit-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1490,7 +1494,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1498,7 +1502,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Jamee.SummitUIAppNew-WatchKit-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1516,7 +1520,7 @@
 			baseConfigurationReference = EF8BCEB493111EB735AAB33E /* Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1524,7 +1528,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Jamee.SummitUIAppNew-WatchKit-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1541,7 +1545,7 @@
 			baseConfigurationReference = 38A85FC1CA802868825D555D /* Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1549,7 +1553,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Jamee.SummitUIAppNew-WatchKit-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;

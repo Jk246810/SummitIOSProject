@@ -18,7 +18,7 @@
                                 <action selector="usernameTextField:" destination="AgC-eL-Hgc" id="7tU-Mj-DxS"/>
                             </connections>
                         </textField>
-                        <textField width="1" alignment="left" placeholder="Password" id="5Mg-Br-eXY">
+                        <textField width="1" alignment="left" placeholder="Password" secureTextEntry="YES" id="5Mg-Br-eXY">
                             <connections>
                                 <action selector="passwordTextField:" destination="AgC-eL-Hgc" id="Z7m-UD-WVQ"/>
                             </connections>
@@ -72,31 +72,31 @@
                         <label alignment="left" text="Rating:" id="tdf-q1-Ztf"/>
                         <group width="116" height="19" alignment="center" id="N0y-rn-g5E">
                             <items>
-                                <button alignment="left" backgroundImage="star" catalog="system" id="Qx7-6R-7po">
+                                <button alignment="left" backgroundImage="1.circle" catalog="system" id="Qx7-6R-7po">
                                     <color key="backgroundColor" name="AccentColor"/>
                                     <connections>
                                         <action selector="star1Clicked" destination="ikR-YC-SfJ" id="aKC-xx-Y69"/>
                                     </connections>
                                 </button>
-                                <button alignment="left" backgroundImage="star" catalog="system" id="6O3-yv-ice">
+                                <button alignment="left" backgroundImage="2.circle" catalog="system" id="6O3-yv-ice">
                                     <color key="backgroundColor" name="AccentColor"/>
                                     <connections>
                                         <action selector="star2Clicked" destination="ikR-YC-SfJ" id="LrA-fP-qov"/>
                                     </connections>
                                 </button>
-                                <button alignment="left" backgroundImage="star" catalog="system" id="R0S-oA-7Sg">
+                                <button alignment="left" backgroundImage="3.circle" catalog="system" id="R0S-oA-7Sg">
                                     <color key="backgroundColor" name="AccentColor"/>
                                     <connections>
                                         <action selector="star3Clicked" destination="ikR-YC-SfJ" id="wrm-fc-ZZ4"/>
                                     </connections>
                                 </button>
-                                <button alignment="left" backgroundImage="star" catalog="system" id="KEY-7M-eWd">
+                                <button alignment="left" backgroundImage="4.alt.circle" catalog="system" id="KEY-7M-eWd">
                                     <color key="backgroundColor" name="AccentColor"/>
                                     <connections>
                                         <action selector="star4Clicked" destination="ikR-YC-SfJ" id="9FQ-Ko-o3T"/>
                                     </connections>
                                 </button>
-                                <button height="219" alignment="left" backgroundImage="star" catalog="system" id="rpj-av-p4W">
+                                <button height="219" alignment="left" backgroundImage="5.circle" catalog="system" id="rpj-av-p4W">
                                     <color key="backgroundColor" name="AccentColor"/>
                                     <connections>
                                         <action selector="star5Clicked" destination="ikR-YC-SfJ" id="1g8-Rs-i3V"/>
@@ -104,12 +104,21 @@
                                 </button>
                             </items>
                         </group>
-                        <label alignment="left" text="Message:" id="OGE-IX-4zA"/>
-                        <textField width="1" alignment="left" id="R66-1A-jfU">
+                        <label alignment="left" text="Additional Notes:" id="OGE-IX-4zA"/>
+                        <button width="1" height="39" alignment="center" title="Too Much Stimulation" id="Db7-rG-52l">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="13"/>
                             <connections>
-                                <action selector="MessageTextFieldInput:" destination="ikR-YC-SfJ" id="Ukt-W6-ndD"/>
+                                <action selector="tooMuchStimulationClicked" destination="ikR-YC-SfJ" id="sIS-OH-ncz"/>
                             </connections>
-                        </textField>
+                        </button>
+                        <button width="1" alignment="center" title="Too Little Stimulation" id="e8W-le-xe0">
+                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="13"/>
+                            <connections>
+                                <action selector="tooLittleStimulationClicked" destination="ikR-YC-SfJ" id="n2n-Yd-W3y"/>
+                            </connections>
+                        </button>
                         <button width="1" alignment="center" verticalAlignment="bottom" title="Submit" id="lkv-3N-ADA">
                             <connections>
                                 <action selector="SubmitClicked" destination="ikR-YC-SfJ" id="BR9-mO-fl8"/>
@@ -117,23 +126,24 @@
                         </button>
                     </items>
                     <connections>
-                        <outlet property="feedbackMessageLabel" destination="R66-1A-jfU" id="8ar-VY-4eZ"/>
                         <outlet property="star1" destination="Qx7-6R-7po" id="M5n-N6-bPm"/>
                         <outlet property="star2" destination="6O3-yv-ice" id="o2v-wV-ldk"/>
                         <outlet property="star3" destination="R0S-oA-7Sg" id="YIW-ZG-HOC"/>
                         <outlet property="star4" destination="KEY-7M-eWd" id="rto-QO-5Ua"/>
                         <outlet property="star5" destination="rpj-av-p4W" id="yqt-3J-Zda"/>
+                        <outlet property="tooLittleStimButton" destination="e8W-le-xe0" id="mbU-VC-bHx"/>
+                        <outlet property="tooMuchStimButton" destination="Db7-rG-52l" id="1af-6J-zKS"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="922" y="371.5"/>
+            <point key="canvasLocation" x="922" y="426.5"/>
         </scene>
         <!--MedicationLogController-->
         <scene sceneID="mXE-78-WJu">
             <objects>
                 <controller identifier="MedicationLogController" id="i3p-xB-G2H" customClass="MedicationLogController" customModule="SummitUIAppNew_WatchKit_Extension">
                     <items>
-                        <textField width="1" alignment="center" verticalAlignment="center" accessibilityIdentifier="medicationLabel" text="Livadopa" placeholder="Medication " id="fet-tF-67o">
+                        <textField width="1" alignment="center" verticalAlignment="center" accessibilityIdentifier="medicationLabel" placeholder="Medication " id="fet-tF-67o">
                             <connections>
                                 <action selector="medicationField:" destination="i3p-xB-G2H" id="VhO-Lt-GvR"/>
                             </connections>
@@ -155,7 +165,29 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="721" y="-52"/>
+            <point key="canvasLocation" x="863" y="32"/>
+        </scene>
+        <!--Medication Option View Controller-->
+        <scene sceneID="6hq-VS-zoh">
+            <objects>
+                <controller id="IAb-C6-3mB" customClass="MedicationOptionViewController" customModule="SummitUIAppNew_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="I Took my Normal Meds" id="1C7-iR-oST">
+                            <fontDescription key="font" type="system" pointSize="13"/>
+                            <connections>
+                                <action selector="logNormalMeds" destination="IAb-C6-3mB" id="etj-26-RIM"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="I Took Unusual Meds" id="opk-7k-Vqw">
+                            <fontDescription key="font" type="system" pointSize="13"/>
+                            <connections>
+                                <segue destination="i3p-xB-G2H" kind="push" id="WQ4-8l-hj0"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="607" y="32"/>
         </scene>
         <!--MainMenuViewController-->
         <scene sceneID="mCZ-Of-Iza">
@@ -165,7 +197,7 @@
                         <button width="1" alignment="left" title="Log Medicaton" id="0gJ-gz-hfr">
                             <connections>
                                 <action selector="signInActivated" destination="AgC-eL-Hgc" id="6OS-gy-ZpI"/>
-                                <segue destination="i3p-xB-G2H" kind="push" id="tsx-pc-4ow"/>
+                                <segue destination="IAb-C6-3mB" kind="push" id="rO9-R6-Qo6"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Give Feedback" id="Q3N-cZ-Py2">
@@ -181,7 +213,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="star" catalog="system" width="128" height="115"/>
+        <image name="1.circle" catalog="system" width="128" height="121"/>
+        <image name="2.circle" catalog="system" width="128" height="121"/>
+        <image name="3.circle" catalog="system" width="128" height="121"/>
+        <image name="4.alt.circle" catalog="system" width="128" height="121"/>
+        <image name="5.circle" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

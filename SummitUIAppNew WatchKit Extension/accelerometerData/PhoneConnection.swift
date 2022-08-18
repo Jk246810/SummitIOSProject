@@ -18,6 +18,7 @@ class PhoneConnection: NSObject, ObservableObject, WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("activationDidCompleteWith state = \(activationState.rawValue)")
     }
+     
     
     func send(key: String, value: Any) -> Bool {
         var isSuccess = false

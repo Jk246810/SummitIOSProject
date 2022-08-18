@@ -51,7 +51,7 @@ class SignInViewController: UIViewController {
         Auth.auth().createUser(withEmail: username!, password: password!) { authResult, error in
 
                       guard let user = authResult?.user, error == nil else {
-                          print("authentication failed")
+                          self.presentFailedLoginScreen()
                         return
                       }
                       print("\(user.email!) created")
@@ -69,7 +69,7 @@ class SignInViewController: UIViewController {
         let password = passwordField.text
         Auth.auth().signIn(withEmail: username!, password: password!) { authResult, error in
             guard let user = authResult?.user, error == nil else {
-                print("authentication failed")
+                self.presentFailedLoginScreen()
               return
             }
             print("\(user.email!) created")
@@ -79,6 +79,14 @@ class SignInViewController: UIViewController {
             self.present(viewController, animated: true, completion: nil)
 
         }
+    }
+    
+    func presentFailedLoginScreen(){
+        let alert = UIAlertController(title: "Unable to Login", message: "Login Failed. Check network connection or credentials", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
 
