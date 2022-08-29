@@ -70,10 +70,11 @@
                 <controller identifier="FeedbackViewController" id="ikR-YC-SfJ" customClass="FeedbackViewController" customModule="SummitUIAppNew_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Rating:" id="tdf-q1-Ztf"/>
-                        <group width="116" height="19" alignment="center" id="N0y-rn-g5E">
+                        <group width="120" height="19" alignment="center" semanticContentAttribute="spatial" contentMode="center" spacing="5" id="N0y-rn-g5E">
                             <items>
                                 <button alignment="left" backgroundImage="1.circle" catalog="system" id="Qx7-6R-7po">
                                     <color key="backgroundColor" name="AccentColor"/>
+                                    <fontDescription key="font" type="system" pointSize="15"/>
                                     <connections>
                                         <action selector="star1Clicked" destination="ikR-YC-SfJ" id="aKC-xx-Y69"/>
                                     </connections>
@@ -105,15 +106,17 @@
                             </items>
                         </group>
                         <label alignment="left" text="Additional Notes:" id="OGE-IX-4zA"/>
-                        <button width="1" height="39" alignment="center" title="Too Much Stimulation" id="Db7-rG-52l">
-                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <button width="1" alignment="center" title="Too Much Stimulation" id="Db7-rG-52l">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" type="system" pointSize="13"/>
                             <connections>
                                 <action selector="tooMuchStimulationClicked" destination="ikR-YC-SfJ" id="sIS-OH-ncz"/>
                             </connections>
                         </button>
                         <button width="1" alignment="center" title="Too Little Stimulation" id="e8W-le-xe0">
-                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" type="system" pointSize="13"/>
                             <connections>
                                 <action selector="tooLittleStimulationClicked" destination="ikR-YC-SfJ" id="n2n-Yd-W3y"/>
@@ -136,7 +139,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="922" y="426.5"/>
+            <point key="canvasLocation" x="922" y="427"/>
         </scene>
         <!--MedicationLogController-->
         <scene sceneID="mXE-78-WJu">

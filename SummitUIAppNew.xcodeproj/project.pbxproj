@@ -439,7 +439,7 @@
 				7B09B70127456AD200AEBA75 /* Frameworks */,
 				7B09B70227456AD200AEBA75 /* Resources */,
 				7B09B76C27456AD800AEBA75 /* Embed Watch Content */,
-				828144BF27DA41BAC96E2A9B /* [CP] Embed Pods Frameworks */,
+				4CF81898B6785E3905D8BE4E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -478,7 +478,7 @@
 				7B09B72027456AD500AEBA75 /* Sources */,
 				7B09B72127456AD500AEBA75 /* Frameworks */,
 				7B09B72227456AD500AEBA75 /* Resources */,
-				E06B95D7B408FB1502A8503C /* [CP] Embed Pods Frameworks */,
+				ED1E0BA61D3717E5FCA50E43 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -517,7 +517,7 @@
 				7B09B73827456AD700AEBA75 /* Sources */,
 				7B09B73927456AD700AEBA75 /* Frameworks */,
 				7B09B73A27456AD700AEBA75 /* Resources */,
-				FF9184C5BB8D21666DDD3F63 /* [CP] Embed Pods Frameworks */,
+				8472FD0F909349CBC83F0B5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -555,7 +555,7 @@
 				7B09B75727456AD800AEBA75 /* Sources */,
 				7B09B75827456AD800AEBA75 /* Frameworks */,
 				7B09B75927456AD800AEBA75 /* Resources */,
-				A4F5F8F5199F82628427CDDB /* [CP] Embed Pods Frameworks */,
+				41553177884C21CE9BB3F27C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -714,6 +714,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		41553177884C21CE9BB3F27C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CF81898B6785E3905D8BE4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew/Pods-SummitUIAppNew-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew/Pods-SummitUIAppNew-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew/Pods-SummitUIAppNew-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5E4611A93F36FF36AC259BFB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -736,38 +770,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		828144BF27DA41BAC96E2A9B /* [CP] Embed Pods Frameworks */ = {
+		8472FD0F909349CBC83F0B5B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew/Pods-SummitUIAppNew-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew/Pods-SummitUIAppNew-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew/Pods-SummitUIAppNew-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A4F5F8F5199F82628427CDDB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests/Pods-SummitUIAppNew-SummitUIAppNew WatchKit AppUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF45A1B35D2C84A4A1D40C36 /* [CP] Check Pods Manifest.lock */ = {
@@ -814,23 +831,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E06B95D7B408FB1502A8503C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E5064EA7497B38444B567FC7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -851,6 +851,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED1E0BA61D3717E5FCA50E43 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew-SummitUIAppNewUITests/Pods-SummitUIAppNew-SummitUIAppNewUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F52E31A4F5B3A945F68CEA4B /* [CP] Check Pods Manifest.lock */ = {
@@ -895,23 +912,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FF9184C5BB8D21666DDD3F63 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SummitUIAppNew WatchKit Extension/Pods-SummitUIAppNew WatchKit Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

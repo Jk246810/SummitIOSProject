@@ -82,23 +82,46 @@ class FeedbackViewController: WKInterfaceController {
         ] as [String : Any]
         if PhoneConnection.shared.send(key: "Feedback", value: submitFeedback){
             print("feedback submitted")
+            resetValues()
+            successfullySent()
         }else{
             print("send failed")
         }
     }
     
     @IBAction func tooMuchStimulationClicked() {
+        
         tooMuchStimButton.setBackgroundColor(UIColor.white)
-        tooLittleStimButton.setBackgroundColor(UIColor.gray)
+        tooLittleStimButton.setBackgroundColor(UIColor.darkGray)
         feedback.feedbackMessage = "Too much stimulation"
         
     }
     
     
     @IBAction func tooLittleStimulationClicked() {
-        tooMuchStimButton.setBackgroundColor(UIColor.gray)
         tooLittleStimButton.setBackgroundColor(UIColor.white)
+        tooMuchStimButton.setBackgroundColor(UIColor.darkGray)
         feedback.feedbackMessage = "Too little stimulation"
+        
+    }
+    
+    func successfullySent(){
+        let action = WKAlertAction(title: "Ok", style: WKAlertActionStyle.default) {
+                print("Ok")
+            }
+            presentAlert(withTitle: "Success!", message: "Your medication was successfully logged", preferredStyle: WKAlertControllerStyle.alert, actions:[action])
+    }
+    
+    func resetValues(){
+        star1.setBackgroundImage(UIImage(systemName: "1.circle"))
+        star2.setBackgroundImage(UIImage(systemName:"2.circle"))
+        star3.setBackgroundImage(UIImage(systemName:"3.circle"))
+        star4.setBackgroundImage(UIImage(systemName:"4.circle"))
+        star5.setBackgroundImage(UIImage(systemName:"5.circle"))
+        feedback.rating = 0
+        feedback.feedbackMessage = " "
+        tooMuchStimButton.setBackgroundColor(UIColor.darkGray)
+        tooLittleStimButton.setBackgroundColor(UIColor.darkGray)
         
     }
     

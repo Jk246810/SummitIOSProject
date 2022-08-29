@@ -15,6 +15,7 @@ class InterfaceController: WKInterfaceController {
     var passwordText: String = ""
     
     lazy var user = Auth.auth().currentUser
+    
     override func awake(withContext context: Any?) {
 
         

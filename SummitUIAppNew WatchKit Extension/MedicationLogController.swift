@@ -18,7 +18,7 @@ class MedicationLogController:
     @IBOutlet weak var dosageFieldOutlet: WKInterfaceTextField!
     
     lazy var user = Auth.auth().currentUser
-    var medicationTextField="Livadopa"
+    var medicationTextField=""
     var dosageTextField=""
     
     let today = Date()
@@ -49,12 +49,12 @@ class MedicationLogController:
            
         }
        
-        self.medicationFieldOutlet.setText("Livadopa")
+        self.medicationFieldOutlet.setText("")
         self.dosageFieldOutlet.setText("")
     }
     
     func successfullySent(){
-        let action = WKAlertAction(title: "Send Succeeded", style: WKAlertActionStyle.default) {
+        let action = WKAlertAction(title: "Ok", style: WKAlertActionStyle.default) {
                 print("Ok")
             }
             presentAlert(withTitle: "Success!", message: "Your medication was successfully logged", preferredStyle: WKAlertControllerStyle.alert, actions:[action])

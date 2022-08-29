@@ -29,13 +29,14 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.CTMStatus.tintColor = UIColor.red
+        self.INSStatus.tintColor = UIColor.red
+        self.TabletStatus.tintColor = UIColor.red
         if((user) != nil){
             db = Firestore.firestore()
             registerAPNSwithFirebase()
             setUpWatchConnection()
             enableBatteryListener()
-        }else{
-           
         }
 
     }
@@ -61,6 +62,9 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         db.collection("Users_Collection").document(user!.uid).collection("AtHome_Collection").document("Battery_Status_Document").addSnapshotListener{ documentSnapshot, error in
             guard let document = documentSnapshot else {
                 print("Error fetching document: \(error!)")
+                self.CTMStatus.tintColor = UIColor.red
+                self.INSStatus.tintColor = UIColor.red
+                self.TabletStatus.tintColor = UIColor.red
                 return
             }
             guard let data = document.data() else {
