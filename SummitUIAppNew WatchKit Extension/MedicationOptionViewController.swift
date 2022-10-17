@@ -12,6 +12,7 @@ class MedicationOptionViewController: WKInterfaceController {
     let today = Date()
     let formatter1 = DateFormatter()
     
+    
     @IBAction func logNormalMeds() {
         formatter1.dateFormat = "HH:mm E, d MMM y"
         
@@ -24,6 +25,12 @@ class MedicationOptionViewController: WKInterfaceController {
         }else{
             failedToSend()
         }
+    }
+   
+    override func willActivate(){
+        super.willActivate()
+        
+        
     }
     
     func successfullySent(){

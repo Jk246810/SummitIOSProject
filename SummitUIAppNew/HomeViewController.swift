@@ -38,8 +38,12 @@ class HomeViewController: UIViewController, WCSessionDelegate {
             setUpWatchConnection()
             enableBatteryListener()
         }
+        
 
     }
+    
+    
+    
     func registerAPNSwithFirebase(){
         Messaging.messaging().token { token, error in
             if let error = error {

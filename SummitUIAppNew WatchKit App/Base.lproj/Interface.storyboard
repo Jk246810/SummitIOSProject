@@ -209,10 +209,22 @@
                                 <segue destination="ikR-YC-SfJ" kind="push" id="uY0-PO-Fmv"/>
                             </connections>
                         </button>
+                        <button width="43" height="40" alignment="center" backgroundImage="play.circle" catalog="system" id="cEV-J7-CjF">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="StartStreamingSelected" destination="1qd-S0-eTi" id="fK3-IN-rU7"/>
+                            </connections>
+                        </button>
+                        <button width="40" height="39" alignment="center" backgroundImage="pause.circle" catalog="system" id="QYT-B9-fP1">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="StopStreamingSelected" destination="1qd-S0-eTi" id="vwN-vn-7JA"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="370" y="32.5"/>
+            <point key="canvasLocation" x="370" y="32"/>
         </scene>
     </scenes>
     <resources>
@@ -221,6 +233,8 @@
         <image name="3.circle" catalog="system" width="128" height="121"/>
         <image name="4.alt.circle" catalog="system" width="128" height="121"/>
         <image name="5.circle" catalog="system" width="128" height="121"/>
+        <image name="pause.circle" catalog="system" width="128" height="121"/>
+        <image name="play.circle" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

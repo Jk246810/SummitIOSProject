@@ -24,6 +24,7 @@ class MedicationLogController:
     let today = Date()
     let formatter1 = DateFormatter()
     
+
     
     @IBAction func medicationField(_ value: NSString?) {
         medicationTextField = (value ?? " ") as String
