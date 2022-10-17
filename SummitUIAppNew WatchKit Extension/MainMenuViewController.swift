@@ -13,7 +13,8 @@ import CoreLocation
 class MainMenuViewController: WKInterfaceController, WKExtensionDelegate, CLLocationManagerDelegate {
     var session: WKExtendedRuntimeSession!
     //var backgroundTask = BackgroundTask()
-    //var accelerationArray: [[String : String]] = []
+    var accelerationArray: [String] = []
+    var accByteSize = 0
     var timer = Timer()
     var motionManager: CMMotionManager?
     
@@ -31,12 +32,28 @@ class MainMenuViewController: WKInterfaceController, WKExtensionDelegate, CLLoca
     
     @objc func startLogSensor(){
           if let data = motionManager?.accelerometerData {
-              print(data)
+              let bytes = data.description.lengthOfBytes(using: String.Encoding.utf8)
+              if(accByteSize <= 460){
+                  accelerationArray.append(data.description)
+                  accByteSize += bytes
+              }else{
+                  let accelerationValues = [
+                      "AccString": accelerationArray,
+                  ]
+                  if PhoneConnection.shared.send(key: "Acc_Data", value: accelerationValues){
+                      accelerationArray = [data.description]
+                      accByteSize = bytes
+                      print("send succeeded")
+                  }else{
+                        print("send failed")
+                  }
+              }
+              
 //              let accData = [
 //                  "xAcc": x,
 //                   "yAcc": y,
 //                  "zAcc": z,
-//               ] as [String : String]
+//               ] as [String : [String]]
 //               accelerationArray.append(accData)
 //               if PhoneConnection.shared.send(key: "Acc_Data", value: accData){
 //               }else{

@@ -138,6 +138,12 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                     "Date":  medData["Date"] as Any
                 ])
             }
+            if let medData = message["Acc_Data"] as? [String:[String]]{
+                let accArray = medData["AccString"]!
+                for acc in accArray{
+                    print(acc)
+                }
+            }
             if let userFeedback = message["Feedback"] as? [String:Any]{
                 Firestore.firestore().collection("Users_Collection").document(self.user!.uid).collection("Feedback").document().setData([
                     "Rating": userFeedback["Rating"]as! Int,
