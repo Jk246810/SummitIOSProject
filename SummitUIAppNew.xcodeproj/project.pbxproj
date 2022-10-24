@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B41FCC2D58B6EBE10CC5899 /* Pods_SummitUIAppNewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1A6ADBD1072C81B42526E8 /* Pods_SummitUIAppNewTests.framework */; };
-		2F7E24340C157478C5AD2FCC /* Pods_SummitUIAppNew_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A6B43ED4A6E297E14362923 /* Pods_SummitUIAppNew_WatchKit_Extension.framework */; };
 		4EC93245E420B3853C0FFEFA /* Pods_SummitUIAppNew_SummitUIAppNew_WatchKit_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22C1B5633FBF14FAC8C8B910 /* Pods_SummitUIAppNew_SummitUIAppNew_WatchKit_AppUITests.framework */; };
 		7B09B70827456AD200AEBA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B70727456AD200AEBA75 /* AppDelegate.swift */; };
 		7B09B70A27456AD200AEBA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B09B70927456AD200AEBA75 /* SceneDelegate.swift */; };
@@ -40,7 +39,11 @@
 		7BB640A427E2AADF00C9E2D2 /* SummitUIAppNew WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B09B73C27456AD700AEBA75 /* SummitUIAppNew WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7BD1359D286CFA07001315CC /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1359C286CFA07001315CC /* MainMenuViewController.swift */; };
 		7BD1359F286D28A9001315CC /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1359E286D28A9001315CC /* FeedbackViewController.swift */; };
+		7BDC07942906A9B4001E2249 /* Pods_SummitUIAppNew_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A6B43ED4A6E297E14362923 /* Pods_SummitUIAppNew_WatchKit_Extension.framework */; };
 		7BEAE1C6283DC418007C9A3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BEAE1C5283DC418007C9A3B /* GoogleService-Info.plist */; };
+		7BEB8CEF2903307500074F5E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB8CEE2903307500074F5E /* LocationManager.swift */; };
+		7BEB8CF129033D2E00074F5E /* BusableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB8CF029033D2E00074F5E /* BusableController.swift */; };
+		7BEB8CF329033E4E00074F5E /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB8CF229033E4E00074F5E /* Bus.swift */; };
 		7BF04A532894484600615308 /* CredentialsValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF04A522894484600615308 /* CredentialsValidator.swift */; };
 		7BF04A552894486700615308 /* InjectableNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF04A542894486700615308 /* InjectableNotifications.swift */; };
 		7BF04A57289448CF00615308 /* SimpleCredentialsValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF04A56289448CF00615308 /* SimpleCredentialsValidator.swift */; };
@@ -50,7 +53,7 @@
 		7BF04A5F28944A3900615308 /* SimpleCredentialsValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF04A5E28944A3900615308 /* SimpleCredentialsValidatorTests.swift */; };
 		7BF5041927E9766F00F1AD23 /* PhoneConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5041827E9766F00F1AD23 /* PhoneConnection.swift */; };
 		BB786D9408F85742C4F29C3E /* Pods_SummitUIAppNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7057F622DC07D62D011015 /* Pods_SummitUIAppNew.framework */; };
-		CABB41D1B54DE74914F1379C /* Pods_SummitUIAppNew_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA4251EFA4E39B3FAE8F9F1 /* Pods_SummitUIAppNew_WatchKit_App.framework */; };
+		CABB41D1B54DE74914F1379C /* Pods_SummitUIAppNew_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CA4251EFA4E39B3FAE8F9F1 /* Pods_SummitUIAppNew_WatchKit_App.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		DF6064A1FC416A59AC0DEE23 /* Pods_SummitUIAppNew_SummitUIAppNewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6256B871A381ED383DD1849 /* Pods_SummitUIAppNew_SummitUIAppNewUITests.framework */; };
 		E107D7931D1544FC9D7C3BD3 /* Pods_SummitUIAppNew_WatchKit_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EEC7AA517D76A2183D7D91 /* Pods_SummitUIAppNew_WatchKit_AppTests.framework */; };
 /* End PBXBuildFile section */
@@ -179,6 +182,9 @@
 		7BD1359E286D28A9001315CC /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		7BEAE1C5283DC418007C9A3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7BEAE1CA283DC576007C9A3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/Watchkit Google Service/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7BEB8CEE2903307500074F5E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		7BEB8CF029033D2E00074F5E /* BusableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusableController.swift; sourceTree = "<group>"; };
+		7BEB8CF229033E4E00074F5E /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
 		7BF04A522894484600615308 /* CredentialsValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsValidator.swift; sourceTree = "<group>"; };
 		7BF04A542894486700615308 /* InjectableNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableNotifications.swift; sourceTree = "<group>"; };
 		7BF04A56289448CF00615308 /* SimpleCredentialsValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCredentialsValidator.swift; sourceTree = "<group>"; };
@@ -229,7 +235,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F7E24340C157478C5AD2FCC /* Pods_SummitUIAppNew_WatchKit_Extension.framework in Frameworks */,
+				7BDC07942906A9B4001E2249 /* Pods_SummitUIAppNew_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +422,9 @@
 			children = (
 				7B5A5C8C28F6FE0500AC6550 /* blank.wav */,
 				7B5A5C8D28F6FE0F00AC6550 /* BackgroundTask.swift */,
+				7BEB8CEE2903307500074F5E /* LocationManager.swift */,
+				7BEB8CF029033D2E00074F5E /* BusableController.swift */,
+				7BEB8CF229033E4E00074F5E /* Bus.swift */,
 			);
 			path = BackgroundExtension;
 			sourceTree = "<group>";
@@ -976,10 +985,13 @@
 				7B09B74627456AD700AEBA75 /* NotificationController.swift in Sources */,
 				7B09B74827456AD700AEBA75 /* ComplicationController.swift in Sources */,
 				7BF5041927E9766F00F1AD23 /* PhoneConnection.swift in Sources */,
+				7BEB8CEF2903307500074F5E /* LocationManager.swift in Sources */,
+				7BEB8CF129033D2E00074F5E /* BusableController.swift in Sources */,
 				7BD1359F286D28A9001315CC /* FeedbackViewController.swift in Sources */,
 				7BD1359D286CFA07001315CC /* MainMenuViewController.swift in Sources */,
 				7B09B74427456AD700AEBA75 /* ExtensionDelegate.swift in Sources */,
 				7B7BD67228AE0CE80029C7ED /* MedicationOptionViewController.swift in Sources */,
+				7BEB8CF329033E4E00074F5E /* Bus.swift in Sources */,
 				7B09B74227456AD700AEBA75 /* InterfaceController.swift in Sources */,
 				7B5A5C8E28F6FE5E00AC6550 /* BackgroundTask.swift in Sources */,
 				7B2BECC9278E5E2100A58C79 /* MedicationLogController.swift in Sources */,
