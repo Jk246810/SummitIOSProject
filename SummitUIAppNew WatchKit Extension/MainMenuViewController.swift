@@ -50,7 +50,7 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
     
     
     @objc func startLogSensor(){
-        
+        print("still being called")
           if let data = motionManager?.accelerometerData {
              let bytes = data.description.lengthOfBytes(using: String.Encoding.utf8)
                if(accByteSize <= 460){
@@ -71,18 +71,6 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
                   }
              }
               
-//              let accData = [
-//                  "xAcc": x,
-//                   "yAcc": y,
-//                  "zAcc": z,
-//               ] as [String : [String]]
-//               accelerationArray.append(accData)
-//               if PhoneConnection.shared.send(key: "Acc_Data", value: accData){
-//               }else{
-//                   print("send failed")
-//               }
-              
-               //print("Have a new accelerometer stream \(accData)")
           }
         
        }
@@ -93,7 +81,7 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
         if self.motionManager!.isAccelerometerAvailable {
             motionManager?.startAccelerometerUpdates()
             
-            self.timer = Timer.scheduledTimer(timeInterval: 1.0,
+            self.timer = Timer.scheduledTimer(timeInterval: 1.0/20,
                                target: self,
                                               selector: #selector(self.startLogSensor),
                                userInfo: nil,
@@ -116,8 +104,12 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
         if self.motionManager!.isAccelerometerActive {
             self.motionManager?.stopAccelerometerUpdates()
         }
-        LocationManager.shared.stopMonitoring()
         timer.invalidate()
+        if (timer.isValid){
+            print("the timer is still valid for some reason")
+        }
+        LocationManager.shared.stopMonitoring()
+        
     }
 }
 
