@@ -47,38 +47,26 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
         _ = PhoneConnection.shared
         self.setupBus()
     }
-    /*override func willActivate() {
-        super.willActivate()
-        _ = PhoneConnection.shared
-        
-        /*motionManager = CMMotionManager()
-        locationManager = CLLocationManager()
-            locationManager?.delegate = self
-            locationManager?.requestAlwaysAuthorization()
-        locationManager?.allowsBackgroundLocationUpdates = true*/
-        LocationManager.shared.requestAccess()
-        self.setupBus()
-        
-    }*/
+    
     
     @objc func startLogSensor(){
         
           if let data = motionManager?.accelerometerData {
-              //recent  let bytes = data.description.lengthOfBytes(using: String.Encoding.utf8)
-              //recent  if(accByteSize <= 460){
-                  //recent   accelerationArray.append(data.description)
-                  //recent   accByteSize += bytes
-                  //recent }else{
-                  //recent let accelerationValues = [
-                  //recent "AccString": accelerationArray,
-                      //recent ]
-              if PhoneConnection.shared.send(key: "Acc_Data", value:[data.description] /*accelerationValues*/){
-                  //recent accelerationArray = [data.description]
-                  //recent    accByteSize = bytes
+             let bytes = data.description.lengthOfBytes(using: String.Encoding.utf8)
+               if(accByteSize <= 460){
+                  accelerationArray.append(data.description)
+                  accByteSize += bytes
+                }else{
+                  let accelerationValues = [
+                  "AccString": accelerationArray,
+                      ]
+              if PhoneConnection.shared.send(key: "Acc_Data", value:accelerationValues){
+                  accelerationArray = [data.description]
+                  accByteSize = bytes
                      print("send succeeded")
                     print(Date())
                       
-                  }else{
+                }else{
                        print("send failed")
                   }
              }
@@ -95,7 +83,7 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
 //               }
               
                //print("Have a new accelerometer stream \(accData)")
-        //recent }
+          }
         
        }
     

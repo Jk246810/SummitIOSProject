@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Allow app to use location in background</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Allow app to use location in background</string>
-	<key>com.apple.developer.healthkit.background-delivery</key>
-	<true/>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -27,5 +21,7 @@
 	<array>
 		<string>workout-processing</string>
 	</array>
+	<key>com.apple.developer.healthkit.background-delivery</key>
+	<true/>
 </dict>
 </plist>

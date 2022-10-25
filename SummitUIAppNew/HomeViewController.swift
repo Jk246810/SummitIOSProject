@@ -48,7 +48,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
             setUpWatchConnection()
             enableBatteryListener()
         }
-        centralManager = CBCentralManager(delegate: self, queue: nil)
+        //centralManager = CBCentralManager(delegate: self, queue: nil)
 
     }
     
@@ -140,6 +140,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                     "Notes": "Normal Medication Schedule",
                     "Date" : medOptionData["Date"] as Any
                     ])
+                print("successfully stored")
             }
             if let medData = message["Medication"] as? [String:String]{
                 Firestore.firestore().collection("Users_Collection").document(self.user!.uid).collection("Medications").document().setData([
@@ -149,15 +150,17 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                 ])
             }
             if let medData = message["Acc_Data"] as? [String:[String]]{
-                let accArray = medData["AccString"]!
-                /*for acc in accArray{
-                    if let char_external_write2 = self.char_external_write {
+                //let accArray = medData["AccString"]!
+                //for acc in accArray{
+                    /*if let char_external_write2 = self.char_external_write {
                         self.write(value: acc.data(using: .utf8)!, characteristic: char_external_write2)
-                        print(char_external_write2.uuid)
-                        }
+                        //print(char_external_write2.uuid)
+                       
+                        }*/
                     
-                }*/
-                print("received")
+                    
+                //}
+                print("sent data to bluetooth")
             }
             if let userFeedback = message["Feedback"] as? [String:Any]{
                 Firestore.firestore().collection("Users_Collection").document(self.user!.uid).collection("Feedback").document().setData([

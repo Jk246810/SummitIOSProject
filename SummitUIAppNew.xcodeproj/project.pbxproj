@@ -73,13 +73,6 @@
 			remoteGlobalIDString = 7B09B70327456AD200AEBA75;
 			remoteInfo = SummitUIAppNew;
 		};
-		7B09B73027456AD500AEBA75 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7B09B6FC27456AD100AEBA75 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7B09B72D27456AD500AEBA75;
-			remoteInfo = "SummitUIAppNew WatchKit App";
-		};
 		7B09B75227456AD800AEBA75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7B09B6FC27456AD100AEBA75 /* Project object */;
@@ -468,7 +461,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				7B09B73127456AD500AEBA75 /* PBXTargetDependency */,
 			);
 			name = SummitUIAppNew;
 			productName = SummitUIAppNew;
@@ -1028,11 +1020,6 @@
 			target = 7B09B70327456AD200AEBA75 /* SummitUIAppNew */;
 			targetProxy = 7B09B72527456AD500AEBA75 /* PBXContainerItemProxy */;
 		};
-		7B09B73127456AD500AEBA75 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7B09B72D27456AD500AEBA75 /* SummitUIAppNew WatchKit App */;
-			targetProxy = 7B09B73027456AD500AEBA75 /* PBXContainerItemProxy */;
-		};
 		7B09B75327456AD800AEBA75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7B09B73B27456AD700AEBA75 /* SummitUIAppNew WatchKit Extension */;
@@ -1203,7 +1190,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "SummitUIAppNew WatchKit Extension";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = SummitUIAppNew_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Summit UI would like to access your location";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow app to use location in background";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow app to use location in background";
 				INFOPLIST_KEY_WKExtensionDelegateClassName = SummitUIAppNew_WatchKit_Extension.ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1237,7 +1225,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "SummitUIAppNew WatchKit Extension";
 				INFOPLIST_KEY_CLKComplicationPrincipalClass = SummitUIAppNew_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Summit UI would like to access your location";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow app to use location in background";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Allow app to use location in background";
 				INFOPLIST_KEY_WKExtensionDelegateClassName = SummitUIAppNew_WatchKit_Extension.ExtensionDelegate;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1326,6 +1315,7 @@
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SummitUIAppNew/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "App would like to connect bluetooth";
 				INFOPLIST_KEY_NSMotionUsageDescription = "access motion data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1361,6 +1351,7 @@
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SummitUIAppNew/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "App would like to connect bluetooth";
 				INFOPLIST_KEY_NSMotionUsageDescription = "access motion data";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
