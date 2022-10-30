@@ -11,7 +11,7 @@ import UIKit
 
 struct Feedback{
     var feedbackMessage = ""
-    var rating = 0
+    var rating = true
 }
 
 class FeedbackViewController: WKInterfaceController {
@@ -37,7 +37,7 @@ class FeedbackViewController: WKInterfaceController {
         star3.setBackgroundImage(UIImage(systemName:"3.circle"))
         star4.setBackgroundImage(UIImage(systemName:"4.circle"))
         star5.setBackgroundImage(UIImage(systemName:"5.circle"))
-        feedback.rating = 1
+        feedback.rating = true
         
     }
     @IBAction func star2Clicked() {
@@ -46,7 +46,8 @@ class FeedbackViewController: WKInterfaceController {
         star3.setBackgroundImage(UIImage(systemName:"3.circle"))
         star4.setBackgroundImage(UIImage(systemName:"4.circle"))
         star5.setBackgroundImage(UIImage(systemName:"5.circle"))
-        feedback.rating = 2
+        feedback.rating = true
+        
     }
     @IBAction func star3Clicked() {
         star1.setBackgroundImage(UIImage(systemName: "1.circle"))
@@ -54,7 +55,7 @@ class FeedbackViewController: WKInterfaceController {
         star3.setBackgroundImage(UIImage(systemName:"3.circle.fill"))
         star4.setBackgroundImage(UIImage(systemName:"4.circle"))
         star5.setBackgroundImage(UIImage(systemName:"5.circle"))
-        feedback.rating = 3
+        feedback.rating = false
     }
     @IBAction func star4Clicked() {
         star1.setBackgroundImage(UIImage(systemName: "1.circle"))
@@ -62,7 +63,7 @@ class FeedbackViewController: WKInterfaceController {
         star3.setBackgroundImage(UIImage(systemName:"3.circle"))
         star4.setBackgroundImage(UIImage(systemName:"4.circle.fill"))
         star5.setBackgroundImage(UIImage(systemName:"5.circle"))
-        feedback.rating = 4
+        feedback.rating = false
     }
     @IBAction func star5Clicked() {
         star1.setBackgroundImage(UIImage(systemName: "1.circle"))
@@ -70,14 +71,14 @@ class FeedbackViewController: WKInterfaceController {
         star3.setBackgroundImage(UIImage(systemName:"3.circle"))
         star4.setBackgroundImage(UIImage(systemName:"4.circle"))
         star5.setBackgroundImage(UIImage(systemName:"5.circle.fill"))
-        feedback.rating = 5
+        feedback.rating = false
     }
     
    
     
     @IBAction func SubmitClicked() {
         let submitFeedback = [
-            "Rating": feedback.rating,
+            "Good": feedback.rating,
             "Message": feedback.feedbackMessage,
         ] as [String : Any]
         if PhoneConnection.shared.send(key: "Feedback", value: submitFeedback){
@@ -118,7 +119,7 @@ class FeedbackViewController: WKInterfaceController {
         star3.setBackgroundImage(UIImage(systemName:"3.circle"))
         star4.setBackgroundImage(UIImage(systemName:"4.circle"))
         star5.setBackgroundImage(UIImage(systemName:"5.circle"))
-        feedback.rating = 0
+        feedback.rating = true
         feedback.feedbackMessage = " "
         tooMuchStimButton.setBackgroundColor(UIColor.darkGray)
         tooLittleStimButton.setBackgroundColor(UIColor.darkGray)
