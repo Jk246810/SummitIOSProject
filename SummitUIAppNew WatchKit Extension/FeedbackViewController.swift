@@ -16,12 +16,7 @@ struct Feedback{
 
 class FeedbackViewController: WKInterfaceController {
 
-    @IBOutlet weak var star1: WKInterfaceButton!
-    @IBOutlet weak var star2: WKInterfaceButton!
-    @IBOutlet weak var star3: WKInterfaceButton!
-    
-    @IBOutlet weak var star4: WKInterfaceButton!
-    @IBOutlet weak var star5: WKInterfaceButton!
+
     
     
     @IBOutlet weak var tooMuchStimButton: WKInterfaceButton!
@@ -29,51 +24,6 @@ class FeedbackViewController: WKInterfaceController {
     
     
     var feedback = Feedback()
-    
-    
-    @IBAction func star1Clicked() {
-        star1.setBackgroundImage(UIImage(systemName: "1.circle.fill"))
-        star2.setBackgroundImage(UIImage(systemName:"2.circle"))
-        star3.setBackgroundImage(UIImage(systemName:"3.circle"))
-        star4.setBackgroundImage(UIImage(systemName:"4.circle"))
-        star5.setBackgroundImage(UIImage(systemName:"5.circle"))
-        feedback.rating = true
-        
-    }
-    @IBAction func star2Clicked() {
-        star1.setBackgroundImage(UIImage(systemName: "1.circle"))
-        star2.setBackgroundImage(UIImage(systemName:"2.circle.fill"))
-        star3.setBackgroundImage(UIImage(systemName:"3.circle"))
-        star4.setBackgroundImage(UIImage(systemName:"4.circle"))
-        star5.setBackgroundImage(UIImage(systemName:"5.circle"))
-        feedback.rating = true
-        
-    }
-    @IBAction func star3Clicked() {
-        star1.setBackgroundImage(UIImage(systemName: "1.circle"))
-        star2.setBackgroundImage(UIImage(systemName:"2.circle"))
-        star3.setBackgroundImage(UIImage(systemName:"3.circle.fill"))
-        star4.setBackgroundImage(UIImage(systemName:"4.circle"))
-        star5.setBackgroundImage(UIImage(systemName:"5.circle"))
-        feedback.rating = false
-    }
-    @IBAction func star4Clicked() {
-        star1.setBackgroundImage(UIImage(systemName: "1.circle"))
-        star2.setBackgroundImage(UIImage(systemName:"2.circle"))
-        star3.setBackgroundImage(UIImage(systemName:"3.circle"))
-        star4.setBackgroundImage(UIImage(systemName:"4.circle.fill"))
-        star5.setBackgroundImage(UIImage(systemName:"5.circle"))
-        feedback.rating = false
-    }
-    @IBAction func star5Clicked() {
-        star1.setBackgroundImage(UIImage(systemName: "1.circle"))
-        star2.setBackgroundImage(UIImage(systemName:"2.circle"))
-        star3.setBackgroundImage(UIImage(systemName:"3.circle"))
-        star4.setBackgroundImage(UIImage(systemName:"4.circle"))
-        star5.setBackgroundImage(UIImage(systemName:"5.circle.fill"))
-        feedback.rating = false
-    }
-    
    
     
     @IBAction func SubmitClicked() {
@@ -88,6 +38,21 @@ class FeedbackViewController: WKInterfaceController {
         }else{
             print("send failed")
         }
+    }
+    @IBOutlet weak var goodButton: WKInterfaceButton!
+    
+    @IBOutlet weak var badButton: WKInterfaceButton!
+    
+    @IBAction func GoodClicked() {
+        goodButton.setBackgroundColor(UIColor.white)
+        badButton.setBackgroundColor(UIColor.darkGray)
+        feedback.rating = true
+    }
+    
+    @IBAction func badClicked() {
+        badButton.setBackgroundColor(UIColor.white)
+        goodButton.setBackgroundColor(UIColor.darkGray)
+        feedback.rating = false
     }
     
     @IBAction func tooMuchStimulationClicked() {
@@ -114,15 +79,13 @@ class FeedbackViewController: WKInterfaceController {
     }
     
     func resetValues(){
-        star1.setBackgroundImage(UIImage(systemName: "1.circle"))
-        star2.setBackgroundImage(UIImage(systemName:"2.circle"))
-        star3.setBackgroundImage(UIImage(systemName:"3.circle"))
-        star4.setBackgroundImage(UIImage(systemName:"4.circle"))
-        star5.setBackgroundImage(UIImage(systemName:"5.circle"))
+        
         feedback.rating = true
         feedback.feedbackMessage = " "
         tooMuchStimButton.setBackgroundColor(UIColor.darkGray)
         tooLittleStimButton.setBackgroundColor(UIColor.darkGray)
+        goodButton.setBackgroundColor(UIColor.darkGray)
+        badButton.setBackgroundColor(UIColor.darkGray)
         
     }
     

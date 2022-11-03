@@ -155,7 +155,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                     if let char_external_write2 = self.char_external_write {
                         self.write(value: acc.data(using: .utf8)!, characteristic: char_external_write2)
                         print("sent data to bluetooth")
-                        print(Date())
+                        //print(acc)
                        
                     }
                     

@@ -15,8 +15,12 @@ let DID_APP_ENTER_BG_WHILE_PROCESSING = "DID_APP_ENTER_BG_WHILE_PROCESSING"
 
 class MainMenuViewController: BusableController, WKExtensionDelegate {
     var session: WKExtendedRuntimeSession!
+    
     var accelerationArray: [String] = []
     var accByteSize = 0
+    var accelerometerString = ""
+    var date = Date()
+    
     var timer = Timer()
     var motionManager: CMMotionManager?
     
@@ -52,16 +56,26 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
     @objc func startLogSensor(){
         print("still being called")
           if let data = motionManager?.accelerometerData {
-             let bytes = data.description.lengthOfBytes(using: String.Encoding.utf8)
+              let accX = data.acceleration.x
+              let accY = data.acceleration.y
+              let accZ = data.acceleration.z
+              let accDate = date
+              var newString = "|\(accDate),AccX,\(accX),|"
+                                +  "|\(accDate),AccY,\(accY),|"
+                                +  "|\(accDate),AccZ,\(accZ),|"
+              
+             let bytes = newString.lengthOfBytes(using: String.Encoding.utf8)
                if(accByteSize <= 460){
-                  accelerationArray.append(data.description)
+                  //accelerationArray.append(data.description)
+                  accelerometerString = accelerometerString + newString
                   accByteSize += bytes
                 }else{
                   let accelerationValues = [
-                  "AccString": accelerationArray,
+                  "AccString": [accelerometerString],
                       ]
               if PhoneConnection.shared.send(key: "Acc_Data", value:accelerationValues){
-                  accelerationArray = [data.description]
+                  //accelerationArray = [data.description]
+                  accelerometerString = newString
                   accByteSize = bytes
                      print("send succeeded")
                     print(Date())

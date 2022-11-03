@@ -5,7 +5,6 @@
         <deployment identifier="watchOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19454"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -70,48 +69,29 @@
                 <controller identifier="FeedbackViewController" id="ikR-YC-SfJ" customClass="FeedbackViewController" customModule="SummitUIAppNew_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Rating:" id="tdf-q1-Ztf"/>
-                        <group width="120" height="19" alignment="center" semanticContentAttribute="spatial" contentMode="center" spacing="5" id="N0y-rn-g5E">
-                            <items>
-                                <button alignment="left" backgroundImage="1.circle" catalog="system" id="Qx7-6R-7po">
-                                    <color key="backgroundColor" name="AccentColor"/>
-                                    <fontDescription key="font" type="system" pointSize="15"/>
-                                    <connections>
-                                        <action selector="star1Clicked" destination="ikR-YC-SfJ" id="aKC-xx-Y69"/>
-                                    </connections>
-                                </button>
-                                <button alignment="left" backgroundImage="2.circle" catalog="system" id="6O3-yv-ice">
-                                    <color key="backgroundColor" name="AccentColor"/>
-                                    <connections>
-                                        <action selector="star2Clicked" destination="ikR-YC-SfJ" id="LrA-fP-qov"/>
-                                    </connections>
-                                </button>
-                                <button alignment="left" backgroundImage="3.circle" catalog="system" id="R0S-oA-7Sg">
-                                    <color key="backgroundColor" name="AccentColor"/>
-                                    <connections>
-                                        <action selector="star3Clicked" destination="ikR-YC-SfJ" id="wrm-fc-ZZ4"/>
-                                    </connections>
-                                </button>
-                                <button alignment="left" backgroundImage="4.alt.circle" catalog="system" id="KEY-7M-eWd">
-                                    <color key="backgroundColor" name="AccentColor"/>
-                                    <connections>
-                                        <action selector="star4Clicked" destination="ikR-YC-SfJ" id="9FQ-Ko-o3T"/>
-                                    </connections>
-                                </button>
-                                <button height="219" alignment="left" backgroundImage="5.circle" catalog="system" id="rpj-av-p4W">
-                                    <color key="backgroundColor" name="AccentColor"/>
-                                    <connections>
-                                        <action selector="star5Clicked" destination="ikR-YC-SfJ" id="1g8-Rs-i3V"/>
-                                    </connections>
-                                </button>
-                            </items>
-                        </group>
-                        <label alignment="left" text="Additional Notes:" id="OGE-IX-4zA"/>
-                        <button width="1" alignment="center" title="Too Much Stimulation" id="Db7-rG-52l">
+                        <button width="1" alignment="center" title="Good" id="fkU-2e-fyE">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="font" type="system" pointSize="13"/>
                             <connections>
-                                <action selector="tooMuchStimulationClicked" destination="ikR-YC-SfJ" id="sIS-OH-ncz"/>
+                                <action selector="GoodClicked" destination="ikR-YC-SfJ" id="oVA-OF-Qsz"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="center" title="Bad" id="gzG-A3-ArJ">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="13"/>
+                            <connections>
+                                <action selector="badClicked" destination="ikR-YC-SfJ" id="R61-6Y-bfn"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="Additional Notes:" id="OGE-IX-4zA"/>
+                        <button width="1" alignment="center" title="Too Much Stimulation" id="gYF-JZ-km1">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="font" type="system" pointSize="13"/>
+                            <connections>
+                                <action selector="tooMuchStimulationClicked" destination="ikR-YC-SfJ" id="rBk-lJ-8FD"/>
                             </connections>
                         </button>
                         <button width="1" alignment="center" title="Too Little Stimulation" id="e8W-le-xe0">
@@ -129,13 +109,10 @@
                         </button>
                     </items>
                     <connections>
-                        <outlet property="star1" destination="Qx7-6R-7po" id="M5n-N6-bPm"/>
-                        <outlet property="star2" destination="6O3-yv-ice" id="o2v-wV-ldk"/>
-                        <outlet property="star3" destination="R0S-oA-7Sg" id="YIW-ZG-HOC"/>
-                        <outlet property="star4" destination="KEY-7M-eWd" id="rto-QO-5Ua"/>
-                        <outlet property="star5" destination="rpj-av-p4W" id="yqt-3J-Zda"/>
+                        <outlet property="badButton" destination="gzG-A3-ArJ" id="Ggn-bz-lh9"/>
+                        <outlet property="goodButton" destination="fkU-2e-fyE" id="z7v-JC-fOe"/>
                         <outlet property="tooLittleStimButton" destination="e8W-le-xe0" id="mbU-VC-bHx"/>
-                        <outlet property="tooMuchStimButton" destination="Db7-rG-52l" id="1af-6J-zKS"/>
+                        <outlet property="tooMuchStimButton" destination="gYF-JZ-km1" id="eQ7-VS-3VN"/>
                     </connections>
                 </controller>
             </objects>
@@ -228,15 +205,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1.circle" catalog="system" width="128" height="121"/>
-        <image name="2.circle" catalog="system" width="128" height="121"/>
-        <image name="3.circle" catalog="system" width="128" height="121"/>
-        <image name="4.alt.circle" catalog="system" width="128" height="121"/>
-        <image name="5.circle" catalog="system" width="128" height="121"/>
         <image name="pause.circle" catalog="system" width="128" height="121"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>
