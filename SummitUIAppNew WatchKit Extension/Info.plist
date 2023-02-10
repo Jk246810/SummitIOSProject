@@ -18,9 +18,7 @@
 		<string>remote-notification</string>
 	</array>
 	<key>WKBackgroundModes</key>
-	<array>
-		<string>workout-processing</string>
-	</array>
+	<array/>
 	<key>com.apple.developer.healthkit.background-delivery</key>
 	<true/>
 </dict>

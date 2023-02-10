@@ -88,6 +88,13 @@
 			remoteGlobalIDString = 7B09B72D27456AD500AEBA75;
 			remoteInfo = "SummitUIAppNew WatchKit App";
 		};
+		7B8208FA2913E5F600EBE232 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B09B6FC27456AD100AEBA75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B09B72D27456AD500AEBA75;
+			remoteInfo = "SummitUIAppNew WatchKit App";
+		};
 		7BB640A527E2AADF00C9E2D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7B09B6FC27456AD100AEBA75 /* Project object */;
@@ -464,6 +471,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7B8208FB2913E5F600EBE232 /* PBXTargetDependency */,
 			);
 			name = SummitUIAppNew;
 			productName = SummitUIAppNew;
@@ -1034,6 +1042,11 @@
 			target = 7B09B72D27456AD500AEBA75 /* SummitUIAppNew WatchKit App */;
 			targetProxy = 7B09B75C27456AD800AEBA75 /* PBXContainerItemProxy */;
 		};
+		7B8208FB2913E5F600EBE232 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B09B72D27456AD500AEBA75 /* SummitUIAppNew WatchKit App */;
+			targetProxy = 7B8208FA2913E5F600EBE232 /* PBXContainerItemProxy */;
+		};
 		7BB640A627E2AADF00C9E2D2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7B09B73B27456AD700AEBA75 /* SummitUIAppNew WatchKit Extension */;
@@ -1187,7 +1200,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "SummitUIAppNew WatchKit Extension/SummitUIAppNew WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.11;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SummitUIAppNew WatchKit Extension/Info.plist";
@@ -1203,7 +1216,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JameeKrz.SummitUIAppNew.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1222,7 +1235,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "SummitUIAppNew WatchKit Extension/SummitUIAppNew WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.11;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SummitUIAppNew WatchKit Extension/Info.plist";
@@ -1238,7 +1251,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JameeKrz.SummitUIAppNew.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -1259,14 +1272,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "SummitUIAppNew WatchKit App/SummitUIAppNew WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.11;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = SummitUIAppNew_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "SummitUIAppNew WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.JameeKrz.SummitUIAppNew;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JameeKrz.SummitUIAppNew.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1286,14 +1299,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "SummitUIAppNew WatchKit App/SummitUIAppNew WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.11;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = SummitUIAppNew_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "SummitUIAppNew WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.JameeKrz.SummitUIAppNew;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JameeKrz.SummitUIAppNew.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1315,7 +1328,7 @@
 				CODE_SIGN_ENTITLEMENTS = SummitUIAppNew/SummitUIAppNew.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.11;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SummitUIAppNew/Info.plist;
@@ -1331,7 +1344,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JameeKrz.SummitUIAppNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1351,7 +1364,7 @@
 				CODE_SIGN_ENTITLEMENTS = SummitUIAppNew/SummitUIAppNew.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.11;
 				DEVELOPMENT_TEAM = TUYCPAYDZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SummitUIAppNew/Info.plist;
@@ -1367,7 +1380,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.JameeKrz.SummitUIAppNew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

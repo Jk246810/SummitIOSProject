@@ -31,13 +31,18 @@ class FeedbackViewController: WKInterfaceController {
             "Good": feedback.rating,
             "Message": feedback.feedbackMessage,
         ] as [String : Any]
-        if PhoneConnection.shared.send(key: "Feedback", value: submitFeedback){
-            print("feedback submitted")
-            resetValues()
-            successfullySent()
+        if(feedback.rating == false && feedback.feedbackMessage != ""){
+            if PhoneConnection.shared.send(key: "Feedback", value: submitFeedback){
+                print("feedback submitted")
+                resetValues()
+                successfullySent()
+            }else{
+                print("send failed")
+            }
         }else{
-            print("send failed")
+            notifyInvalidValues()
         }
+        
     }
     @IBOutlet weak var goodButton: WKInterfaceButton!
     
@@ -75,9 +80,15 @@ class FeedbackViewController: WKInterfaceController {
         let action = WKAlertAction(title: "Ok", style: WKAlertActionStyle.default) {
                 print("Ok")
             }
-            presentAlert(withTitle: "Success!", message: "Your medication was successfully logged", preferredStyle: WKAlertControllerStyle.alert, actions:[action])
+            presentAlert(withTitle: "Success!", message: "Your feedback was successfully logged", preferredStyle: WKAlertControllerStyle.alert, actions:[action])
     }
     
+    func notifyInvalidValues(){
+        let action = WKAlertAction(title: "Ok", style: WKAlertActionStyle.default) {
+                print("Ok")
+            }
+            presentAlert(withTitle: "Invalid Entry", message: "You must submit notes if your rating is 'Bad'", preferredStyle: WKAlertControllerStyle.alert, actions:[action])
+    }
     func resetValues(){
         
         feedback.rating = true

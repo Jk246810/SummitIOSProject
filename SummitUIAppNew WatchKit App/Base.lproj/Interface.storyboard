@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="19455" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="19455" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
     <device id="watch38"/>
     <dependencies>
         <deployment identifier="watchOS"/>
@@ -7,10 +7,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19454"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--InterfaceController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SummitUIAppNew_WatchKit_App" customModuleProvider="target">
+                <controller identifier="InterfaceController" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SummitUIAppNew_WatchKit_App" customModuleProvider="target">
                     <items>
                         <textField width="1" alignment="left" placeholder="Username" id="txO-CT-yJJ">
                             <connections>
@@ -172,7 +172,7 @@
         <!--MainMenuViewController-->
         <scene sceneID="mCZ-Of-Iza">
             <objects>
-                <controller identifier="MainMenuViewController" fullBounds="YES" fullScreen="YES" id="1qd-S0-eTi" customClass="MainMenuViewController" customModule="SummitUIAppNew_WatchKit_Extension">
+                <controller identifier="MainMenuViewController" id="1qd-S0-eTi" customClass="MainMenuViewController" customModule="SummitUIAppNew_WatchKit_Extension">
                     <items>
                         <button width="1" alignment="left" title="Log Medicaton" id="0gJ-gz-hfr">
                             <connections>
@@ -186,26 +186,28 @@
                                 <segue destination="ikR-YC-SfJ" kind="push" id="uY0-PO-Fmv"/>
                             </connections>
                         </button>
-                        <button width="43" height="40" alignment="center" backgroundImage="play.circle" catalog="system" id="cEV-J7-CjF">
+                        <button width="63" height="60" alignment="center" backgroundImage="play.circle" catalog="system" id="cEV-J7-CjF">
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="StartStreamingSelected" destination="1qd-S0-eTi" id="fK3-IN-rU7"/>
                             </connections>
                         </button>
-                        <button width="40" height="39" alignment="center" backgroundImage="pause.circle" catalog="system" id="QYT-B9-fP1">
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <button width="1" alignment="left" title="Sign Out" id="PBd-Ud-ABl">
+                            <fontDescription key="font" type="system" pointSize="13"/>
                             <connections>
-                                <action selector="StopStreamingSelected" destination="1qd-S0-eTi" id="vwN-vn-7JA"/>
+                                <action selector="SignOutClicked" destination="1qd-S0-eTi" id="sik-BJ-7UT"/>
                             </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="streamingButton" destination="cEV-J7-CjF" id="Fh9-Ja-wSU"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="370" y="32"/>
+            <point key="canvasLocation" x="370" y="30"/>
         </scene>
     </scenes>
     <resources>
-        <image name="pause.circle" catalog="system" width="128" height="121"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>

@@ -13,16 +13,22 @@ import WatchConnectivity
 import UserNotifications
 import FirebaseMessaging
 import CoreBluetooth
+import os.log
 
 let UartGattServiceId = CBUUID(string: "0000FFF0-0000-1000-8000-00805f9b34fb")
 let UartGattCharacteristicReceiveId = CBUUID(string: "0000FFF1-0000-1000-8000-00805f9b34fb")
 let UartGattCharacteristicSendId = CBUUID(string: "0000FFF2-0000-1000-8000-00805f9b34fb")
 
+@available(iOS 14.0, *)
 class HomeViewController: UIViewController, WCSessionDelegate {
     var char_external_write: CBCharacteristic?
     var centralManager: CBCentralManager!
     var heartRatePeripheral: CBPeripheral!
     var dataToSend = "test_string".data(using: .ascii)
+    
+    private let logger = Logger(
+      subsystem: "IOS CPSL", category: "BLE"
+    )
     
     var user = Auth.auth().currentUser
     var db: Firestore!
@@ -36,6 +42,13 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     @IBOutlet weak var TabletStatus: UIImageView!
     @IBOutlet weak var TabletBattery: UILabel!
     
+    @IBOutlet weak var bluetoothConnection: UILabel!
+    
+    @IBOutlet weak var CTMNumberBattery: UILabel!
+    
+    @IBOutlet weak var TabletNumberBattery: UILabel!
+    
+    @IBOutlet weak var INSNumberBattery: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +60,24 @@ class HomeViewController: UIViewController, WCSessionDelegate {
             registerAPNSwithFirebase()
             setUpWatchConnection()
             enableBatteryListener()
+            enableBatteryLevel()
         }
         centralManager = CBCentralManager(delegate: self, queue: nil)
-
+        
+        
+    }
+    
+    
+    @IBAction func signOutClicked(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+      do {
+        try firebaseAuth.signOut()
+          let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignInViewController")
+          self.present(viewController, animated: true, completion: nil)
+      } catch let signOutError as NSError {
+        print("Error signing out: %@", signOutError)
+      }
+        
     }
     
     
@@ -119,6 +147,41 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         batteryStatus(val: surfaceVal, image: TabletStatus)
     }
     
+    func enableBatteryLevel(){
+        db.collection("Users_Collection").document(user!.uid).collection("AtHome_Collection").document("Battery_Level_Document").addSnapshotListener{ documentSnapshot, error in
+            guard let document = documentSnapshot else {
+                print("Error fetching document: \(error!)")
+                self.CTMNumberBattery.text = "NA"
+                self.INSNumberBattery.text = "NA"
+                self.TabletNumberBattery.text = "NA"
+                return
+            }
+            guard let data = document.data() else {
+                print("Document data was empty.")
+                return
+            }
+            
+            guard let CTMbattery = data["CTM_Battery_Level"] as? Int else{
+                return
+            }
+            guard let INSbattery = data["INS_Battery_Level"] as? Int else{
+                return
+            }
+            guard let computerbattery = data["Computer_Battery_Level"] as? Int else{
+                return
+            }
+            self.handleNumberStatus(ctmVal: CTMbattery, insVal: INSbattery, surfaceVal: computerbattery)
+            
+        }
+    }
+    
+    func handleNumberStatus(ctmVal: Int, insVal: Int, surfaceVal: Int){
+        CTMNumberBattery.text = String(ctmVal)
+        INSNumberBattery.text = String(insVal)
+        TabletNumberBattery.text = String(surfaceVal)
+    }
+    
+    
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         print("activationDidCompleteWith state = \(activationState.rawValue)")
@@ -149,18 +212,19 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                     "Date":  medData["Date"] as Any
                 ])
             }
-            if let medData = message["Acc_Data"] as? [String:[String]]{
+            if let medData = message["Acc_Data"] as? [String:String]{
                 let accArray = medData["AccString"]!
-                for acc in accArray{
+                //this is the bluetooth code, took out to test firebase implementation
                     if let char_external_write2 = self.char_external_write {
-                        self.write(value: acc.data(using: .utf8)!, characteristic: char_external_write2)
-                        print("sent data to bluetooth")
-                        //print(acc)
+                        self.write(raw_value: accArray.data(using: .utf8)!, characteristic: char_external_write2)
                        
                     }
-                    
-                    
-                }
+                //this is the code to upload to firestore
+               /* print("Here is the following value\(accArray)")
+                Firestore.firestore().collection("Users_Collection").document(self.user!.uid).collection("Acceleration Data").document().setData([
+                    "AccelerationString": accArray as Any
+                ])*/
+               
             }
             if let userFeedback = message["Feedback"] as? [String:Any]{
                 Firestore.firestore().collection("Users_Collection").document(self.user!.uid).collection("Feedback").document().setData([

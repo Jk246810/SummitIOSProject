@@ -47,9 +47,9 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syM-kc-erG">
-                                        <rect key="frame" x="127" y="122" width="150" height="31"/>
+                                        <rect key="frame" x="102" y="122" width="200" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="nBb-Ba-67n"/>
+                                            <constraint firstAttribute="width" constant="200" id="nBb-Ba-67n"/>
                                             <constraint firstAttribute="height" constant="31" id="uM8-pZ-ntM"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
@@ -59,9 +59,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9X-qu-dy0">
-                                        <rect key="frame" x="162" y="180" width="80" height="31"/>
+                                        <rect key="frame" x="102" y="180" width="200" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="Ryd-6C-eS4"/>
+                                            <constraint firstAttribute="width" constant="200" id="Ryd-6C-eS4"/>
                                             <constraint firstAttribute="height" constant="31" id="Wnf-NL-EC1"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
@@ -118,7 +118,7 @@
                                 <rect key="frame" x="30" y="114" width="364" height="203"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v9M-tC-gpI">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="23"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="133.5" height="23"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CTM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="40.5" translatesAutoresizingMaskIntoConstraints="NO" id="wVD-tl-ZuN">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="23"/>
@@ -133,10 +133,16 @@
                                                 <rect key="frame" x="80" y="0.5" width="20" height="22"/>
                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWa-xk-KNo">
+                                                <rect key="frame" x="110" y="0.0" width="23.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JlO-si-NEl">
-                                        <rect key="frame" x="0.0" y="90" width="100" height="23"/>
+                                        <rect key="frame" x="0.0" y="90" width="133.5" height="23"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tablet" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="72" translatesAutoresizingMaskIntoConstraints="NO" id="4wm-SE-uNV">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="23"/>
@@ -151,10 +157,16 @@
                                                 <rect key="frame" x="80" y="0.5" width="20" height="22"/>
                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MV-ZV-4SY" userLabel="TabletNumberBattery">
+                                                <rect key="frame" x="110" y="0.0" width="23.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="arZ-HV-una">
-                                        <rect key="frame" x="0.0" y="180" width="100" height="23"/>
+                                        <rect key="frame" x="0.0" y="180" width="133.5" height="23"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INS" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXc-5g-P1Y">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="23"/>
@@ -169,16 +181,42 @@
                                                 <rect key="frame" x="80" y="0.5" width="20" height="22"/>
                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAv-tt-qth">
+                                                <rect key="frame" x="110" y="0.0" width="23.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Connection: Not Updated" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMy-K5-rr5">
+                                <rect key="frame" x="20" y="367" width="272.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="upX-0K-2kO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ked-AX-Fqj">
+                                <rect key="frame" x="168" y="783" width="78" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign out"/>
+                                <connections>
+                                    <action selector="signOutClicked:" destination="f16-yh-Iov" eventType="touchUpInside" id="a22-ai-o1S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oEf-fh-RML"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oEf-fh-RML" firstAttribute="trailing" secondItem="tqW-1v-JLp" secondAttribute="trailing" constant="20" id="OYd-eJ-IUi"/>
                             <constraint firstItem="tqW-1v-JLp" firstAttribute="leading" secondItem="oEf-fh-RML" secondAttribute="leading" constant="20" id="P5V-Cc-JQI"/>
+                            <constraint firstItem="fMy-K5-rr5" firstAttribute="leading" secondItem="oEf-fh-RML" secondAttribute="leading" constant="20" id="PiV-xo-1ph"/>
+                            <constraint firstItem="fMy-K5-rr5" firstAttribute="top" secondItem="21E-dn-9Jo" secondAttribute="bottom" constant="50" id="QDg-fu-90D"/>
                             <constraint firstItem="oEf-fh-RML" firstAttribute="trailing" secondItem="21E-dn-9Jo" secondAttribute="trailing" constant="20" id="aJ5-1R-BpD"/>
                             <constraint firstItem="21E-dn-9Jo" firstAttribute="top" secondItem="tqW-1v-JLp" secondAttribute="bottom" constant="20" id="qZQ-0M-DBP"/>
                             <constraint firstItem="tqW-1v-JLp" firstAttribute="top" secondItem="oEf-fh-RML" secondAttribute="top" constant="20" id="tLg-1r-Kgk"/>
@@ -187,9 +225,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="SVh-20-BT5"/>
                     <connections>
+                        <outlet property="CTMNumberBattery" destination="pWa-xk-KNo" id="SJx-LA-9kV"/>
                         <outlet property="CTMStatus" destination="phg-73-sj0" id="kqR-t4-OCK"/>
+                        <outlet property="INSNumberBattery" destination="PAv-tt-qth" id="max-DX-f7A"/>
                         <outlet property="INSStatus" destination="MUP-gm-IC4" id="BFL-2U-fsr"/>
+                        <outlet property="TabletNumberBattery" destination="1MV-ZV-4SY" id="PW1-hh-MMk"/>
                         <outlet property="TabletStatus" destination="6Hd-BX-gcH" id="L2X-W0-0x2"/>
+                        <outlet property="bluetoothConnection" destination="fMy-K5-rr5" id="8Eb-cq-V14"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBk-o9-qCP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

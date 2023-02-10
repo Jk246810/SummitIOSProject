@@ -54,6 +54,7 @@ extension Bus {
         // Builtin Events
         case AppEnteredBackground
         case AppEnteredForeground
+        //case AppSuspended
     }
 
 }
@@ -66,6 +67,8 @@ extension Bus.Events {
             return WKExtension.applicationDidEnterBackgroundNotification
         case .AppEnteredForeground:
             return WKExtension.applicationWillEnterForegroundNotification
+        //case .AppSuspended:
+           // return WKExtension.applicationWillResignActiveNotification
         default:
             return Notification.Name(self.rawValue)
         }
