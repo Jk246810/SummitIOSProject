@@ -37,7 +37,6 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
     var currDate: String? = nil
 
     
-    
     var didEnterBgWhileProcessing: Bool = false {
         didSet {
             // save the didEnterBgWhileProcessing value on each change
@@ -53,20 +52,7 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
         }
     }
     
-//    var didEnterInvalidWhileProcessing: Bool = false{
-//        didSet {
-//            if self.didEnterInvalidWhileProcessing != oldValue{
-//                DispatchQueue.global().async { [unowned self] in
-//                    UserDefaults.standard.setValue(
-//                        self.didEnterInvalidWhileProcessing,
-//                        forKey: "App Entered Invalid while processing"
-//                    )
-//                    UserDefaults.standard.synchronize()
-//                }
-//
-//            }
-//        }
-//    }
+
     // MARK: Subs
     /// are setup in the ViewController.setupBus method
     var subs: BusableController.Subs = [:]
@@ -81,6 +67,7 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
         //streamingButton.setHidden(true)
         
         //added to fix edge case
+        
         
         self.setupBus()
         if(timer.isValid){
@@ -105,7 +92,14 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
         
         let format = DateFormatter()
         format.dateFormat = "HH:mm:ss"
-        var timestamp = format.string(from: Datefrom1970) + ":" + String(milisec)
+        var stringMiliSec = String(milisec)
+        let milisecFormat = "FFF"
+       
+        while(stringMiliSec.count<milisecFormat.count){
+                stringMiliSec = "0"+stringMiliSec
+        }
+        
+        var timestamp = format.string(from: Datefrom1970) + ":" + stringMiliSec
         
         currDate = timestamp
         //timestamp = String(INDEX) + timestamp
@@ -124,6 +118,24 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
         return total_sec
     }
     
+    func getServerTimeStamp() -> String {
+        let url = URL(string: "http://www.google.com")
+        var returnString = ""
+        URLSession.shared.dataTask(with: url!) { _, response, _ in
+                let httpResponse = response as? HTTPURLResponse
+                print(httpResponse?.statusCode)
+                if let stringDate = httpResponse?.allHeaderFields["Date"] as? String {
+                   print(httpResponse)
+                }
+            }.resume()
+        
+        return returnString
+
+    }
+           
+    
+    
+    
     
     @objc func startLogSensor(){
         
@@ -141,6 +153,7 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
               
               let accDate = get_time_stamp()
 
+            
               
               let newString = "\(accDate);A(\(accXEdited),\(accYEdited),\(accZEdited))|"
               count += 1
@@ -207,6 +220,7 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
             }
             timer.invalidate()
             LocationManager.shared.stopMonitoring()
+            print("status of monitoring: \(LocationManager.shared.state != .Monitoring)")
             //print(differenceArray)
             differenceArray = []
             streamingButton.setBackgroundImage(UIImage(systemName: "play.circle"))
@@ -233,37 +247,30 @@ extension MainMenuViewController {
         self.subs = [
             .AppEnteredBackground: self.enteredBackground(_:),
             .AppEnteredForeground: self.enteredForeground(_:),
-            .LocationAuthUpdate: self.locationAccessChanged(notification:),
-            //.AppSuspended: self.appSuspended(_:)
+            .LocationAuthUpdate: self.locationAccessChanged(notification:)
         ]
     }
     
     private func enteredBackground(_: Notification) {
         print("VC: App entered background")
         let gps = LocationManager.shared
-        if gps.isHasAccess() && timer.isValid { gps.startMonitoring() }
+        if gps.isHasAccess() && timer.isValid && gps.state != .Monitoring{
+            print("start monitoring in background state")
+            gps.startMonitoring() }
         self.didEnterBgWhileProcessing = timer.isValid
         
     }
-    
-//    private func appSuspended(_: Notification){
-//        print("VC: App is inactive")
-//        let gps = LocationManager.shared
-//        if gps.isHasAccess() && timer.isValid{gps.startMonitoring()}
-//        self.didEnterInvalidWhileProcessing = timer.isValid
-//    }
     
     private func enteredForeground(_: Notification) {
         print("VC: App entered foreground")
         let gps = LocationManager.shared
         let cache = UserDefaults.standard
         self.didEnterBgWhileProcessing = cache.bool(forKey: DID_APP_ENTER_BG_WHILE_PROCESSING)
-        
         if !gps.isHasAccess() && self.didEnterBgWhileProcessing {
             print("something went terribly wrong")
         }
         else if gps.state == .Monitoring {
-            gps.startMonitoring()
+           gps.startMonitoring()
         }
     }
     
