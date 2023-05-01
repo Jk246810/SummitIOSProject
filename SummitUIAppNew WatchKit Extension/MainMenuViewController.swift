@@ -142,13 +142,17 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
           if let data = motionManager?.accelerometerData {
               let accX = data.acceleration.x
               let accY = data.acceleration.y
+              let motionX = motionManager?.deviceMotion?.userAcceleration.x
+              let motionY = motionManager?.deviceMotion?.userAcceleration.y
+              let motion = motionManager?.deviceMotion?.userAcceleration.z
+              print("x: \(motionX) y: \(motionY) z: \(motion)")
               let accZ = data.acceleration.z
               
               let accXEdited = Double(floor(1000*accX)/1000)
               let accYEdited = Double(floor(1000*accY)/1000)
               
               
-              var accZEdited = floor(1000*(accZ+1.0))/1000
+              var accZEdited = floor(1000*(accZ))/1000
               
               
               let accDate = get_time_stamp()
@@ -201,6 +205,7 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
         LocationManager.shared.requestAccess()
         if self.motionManager!.isAccelerometerAvailable {
             streamingButton.setBackgroundImage(UIImage(systemName: "pause.circle"))
+            motionManager?.startDeviceMotionUpdates()
             motionManager?.startAccelerometerUpdates()
             motionManager?.accelerometerUpdateInterval = 1.0/25
             self.timer = Timer.scheduledTimer(timeInterval: 1.0/25,
@@ -254,8 +259,7 @@ extension MainMenuViewController {
     private func enteredBackground(_: Notification) {
         print("VC: App entered background")
         let gps = LocationManager.shared
-        if gps.isHasAccess() && timer.isValid && gps.state != .Monitoring{
-            print("start monitoring in background state")
+        if gps.isHasAccess() && timer.isValid /*&& gps.state != .Monitoring*/{
             gps.startMonitoring() }
         self.didEnterBgWhileProcessing = timer.isValid
         
