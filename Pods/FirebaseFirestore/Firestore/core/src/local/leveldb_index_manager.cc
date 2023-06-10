@@ -25,6 +25,8 @@
 #include <utility>
 #include <vector>
 
+#include "Firestore/core/src/core/composite_filter.h"
+#include "Firestore/core/src/core/query.h"
 #include "Firestore/core/src/credentials/user.h"
 #include "Firestore/core/src/index/firestore_index_value_writer.h"
 #include "Firestore/core/src/index/index_byte_encoder.h"
@@ -38,8 +40,10 @@
 #include "Firestore/core/src/model/model_fwd.h"
 #include "Firestore/core/src/model/resource_path.h"
 #include "Firestore/core/src/model/target_index_matcher.h"
+#include "Firestore/core/src/util/comparison.h"
 #include "Firestore/core/src/util/hard_assert.h"
 #include "Firestore/core/src/util/log.h"
+#include "Firestore/core/src/util/logic_utils.h"
 #include "Firestore/core/src/util/set_util.h"
 #include "Firestore/core/src/util/string_util.h"
 #include "Firestore/third_party/nlohmann_json/json.hpp"
@@ -50,6 +54,7 @@ namespace firebase {
 namespace firestore {
 namespace local {
 
+using core::CompositeFilter;
 using core::Filter;
 using core::Target;
 using credentials::User;
@@ -64,6 +69,7 @@ using model::ResourcePath;
 using model::SnapshotVersion;
 using model::TargetIndexMatcher;
 using nlohmann::json;
+using util::LogicUtils;
 
 namespace {
 
@@ -104,8 +110,11 @@ std::string EncodeIndexState(const IndexState& state) {
 
 bool IsInFilter(const Target& target, const model::FieldPath& field_path) {
   for (const auto& filter : target.filters()) {
-    if (filter.IsAFieldFilter() && filter.field() == field_path) {
-      core::FieldFilter field_filter(filter);
+    if (filter.IsAFieldFilter()) {
+      const core::FieldFilter field_filter(filter);
+      if (field_filter.field() != field_path) {
+        continue;
+      }
       if (field_filter.op() == core::FieldFilter::Operator::In ||
           field_filter.op() == core::FieldFilter::Operator::NotIn) {
         return true;
@@ -400,7 +409,7 @@ void LevelDbIndexManager::DeleteFieldIndex(const FieldIndex& index) {
 }
 
 std::vector<FieldIndex> LevelDbIndexManager::GetFieldIndexes(
-    const std::string& collection_group) {
+    const std::string& collection_group) const {
   HARD_ASSERT(started_, "IndexManager not started");
 
   std::vector<FieldIndex> result;
@@ -414,7 +423,7 @@ std::vector<FieldIndex> LevelDbIndexManager::GetFieldIndexes(
   return result;
 }
 
-std::vector<model::FieldIndex> LevelDbIndexManager::GetFieldIndexes() {
+std::vector<model::FieldIndex> LevelDbIndexManager::GetFieldIndexes() const {
   std::vector<FieldIndex> result;
   for (const auto& entry : memoized_indexes_) {
     for (const auto& id_index_entry : entry.second) {
@@ -426,7 +435,7 @@ std::vector<model::FieldIndex> LevelDbIndexManager::GetFieldIndexes() {
 }
 
 absl::optional<model::FieldIndex> LevelDbIndexManager::GetFieldIndex(
-    const core::Target& target) {
+    const core::Target& target) const {
   HARD_ASSERT(started_, "IndexManager not started");
 
   TargetIndexMatcher target_index_matcher(target);
@@ -455,16 +464,85 @@ absl::optional<model::FieldIndex> LevelDbIndexManager::GetFieldIndex(
   return result;
 }
 
+model::IndexOffset LevelDbIndexManager::GetMinOffset(
+    const core::Target& target) {
+  std::vector<FieldIndex> indexes;
+  for (const auto& sub_target : GetSubTargets(target)) {
+    auto index_opt = GetFieldIndex(sub_target);
+    if (index_opt.has_value()) {
+      indexes.push_back(index_opt.value());
+    }
+  }
+  return GetMinOffset(indexes);
+}
+
+model::IndexOffset LevelDbIndexManager::GetMinOffset(
+    const std::string& collection_group) const {
+  const std::vector<model::FieldIndex> field_indexes =
+      GetFieldIndexes(collection_group);
+  return GetMinOffset(field_indexes);
+}
+
+model::IndexOffset LevelDbIndexManager::GetMinOffset(
+    const std::vector<model::FieldIndex>& indexes) const {
+  HARD_ASSERT(
+      !indexes.empty(),
+      "Found empty index group when looking for least recent index offset.");
+
+  auto it = indexes.cbegin();
+  const model::IndexOffset* min_offset =
+      &((it++)->index_state().index_offset());
+  int max_batch_id = min_offset->largest_batch_id();
+  for (; it != indexes.cend(); it++) {
+    const model::IndexOffset* new_offset = &(it->index_state().index_offset());
+    if (new_offset->CompareTo(*min_offset) ==
+        util::ComparisonResult::Ascending) {
+      min_offset = new_offset;
+    }
+    max_batch_id = std::max(max_batch_id, new_offset->largest_batch_id());
+  }
+
+  return {min_offset->read_time(), min_offset->document_key(), max_batch_id};
+}
+
+IndexManager::IndexType LevelDbIndexManager::GetIndexType(
+    const core::Target& target) {
+  IndexManager::IndexType result = IndexManager::IndexType::FULL;
+  const auto sub_targets = GetSubTargets(target);
+
+  for (const Target& sub_target : sub_targets) {
+    absl::optional<model::FieldIndex> index = GetFieldIndex(sub_target);
+    if (!index) {
+      result = IndexManager::IndexType::NONE;
+      break;
+    }
+
+    if (index.value().segments().size() < sub_target.GetSegmentCount()) {
+      result = IndexManager::IndexType::PARTIAL;
+    }
+  }
+
+  // OR queries have more than one sub-target (one sub-target per DNF term).
+  // We currently consider OR queries that have a `limit` to have a partial
+  // index. For such queries we perform sorting and apply the limit in memory as
+  // a post-processing step.
+  if (target.HasLimit() && sub_targets.size() > 1U &&
+      result == IndexManager::IndexType::FULL) {
+    result = IndexManager::IndexType::PARTIAL;
+  }
+
+  return result;
+}
+
 absl::optional<std::vector<model::DocumentKey>>
 LevelDbIndexManager::GetDocumentsMatchingTarget(const core::Target& target) {
-  std::unordered_map<core::Target, model::FieldIndex> indexes;
+  std::vector<std::pair<core::Target, model::FieldIndex>> indexes;
   for (const auto& sub_target : GetSubTargets(target)) {
     auto index_opt = GetFieldIndex(sub_target);
     if (!index_opt.has_value()) {
       return absl::nullopt;
     }
-
-    indexes.insert({sub_target, index_opt.value()});
+    indexes.emplace_back(sub_target, index_opt.value());
   }
 
   std::vector<DocumentKey> result;
@@ -648,7 +726,7 @@ std::vector<LevelDbIndexManager::IndexRange> LevelDbIndexManager::CreateRange(
 }
 
 absl::optional<std::string>
-LevelDbIndexManager::GetNextCollectionGroupToUpdate() {
+LevelDbIndexManager::GetNextCollectionGroupToUpdate() const {
   if (next_index_to_update_.empty()) {
     return absl::nullopt;
   }
@@ -665,7 +743,6 @@ void LevelDbIndexManager::UpdateCollectionGroup(
     IndexState updated_state{memoized_max_sequence_number_, offset};
 
     auto state_key = LevelDbIndexStateKey::Key(uid_, field_index.index_id());
-    auto val = EncodeIndexState(updated_state);
     db_->current_transaction()->Put(std::move(state_key),
                                     EncodeIndexState(updated_state));
 
@@ -779,7 +856,10 @@ void LevelDbIndexManager::UpdateEntries(
     const std::set<IndexEntry>& existing_entries,
     const std::set<IndexEntry>& new_entries) {
   util::DiffSets<IndexEntry>(
-      existing_entries, new_entries, {},
+      existing_entries, new_entries,
+      [](const IndexEntry& left, const IndexEntry& right) {
+        return left.CompareTo(right);
+      },
       [this, document, index](const IndexEntry& entry) {
         this->AddIndexEntry(document, index, entry);
       },
@@ -857,9 +937,33 @@ void LevelDbIndexManager::DeleteIndexEntry(const model::Document& document,
   }
 }
 
-// TODO(OrQuery): Implement sub targets properly.
 std::vector<Target> LevelDbIndexManager::GetSubTargets(const Target& target) {
-  return {target};
+  auto it = target_to_dnf_subtargets_.find(target);
+  if (it != target_to_dnf_subtargets_.end()) {
+    return it->second;
+  }
+
+  std::vector<Target> subtargets;
+  if (target.filters().empty()) {
+    subtargets.push_back(target);
+  } else {
+    // There is an implicit AND operation between all the filters stored in the
+    // target.
+    std::vector<Filter> filters;
+    for (const auto& filter : target.filters()) {
+      filters.push_back(filter);
+    }
+    std::vector<Filter> dnf = LogicUtils::GetDnfTerms(CompositeFilter::Create(
+        std::move(filters), CompositeFilter::Operator::And));
+
+    for (const Filter& term : dnf) {
+      subtargets.push_back({target.path(), target.collection_group(),
+                            term.GetFilters(), target.order_bys(),
+                            target.limit(), target.start_at(),
+                            target.end_at()});
+    }
+  }
+  return target_to_dnf_subtargets_[target] = subtargets;
 }
 
 }  // namespace local

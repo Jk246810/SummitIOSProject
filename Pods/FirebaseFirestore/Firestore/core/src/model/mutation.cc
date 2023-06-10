@@ -99,6 +99,16 @@ Mutation::Rep::Rep(DocumentKey&& key,
       field_transforms_(std::move(field_transforms)) {
 }
 
+Mutation::Rep::Rep(DocumentKey&& key,
+                   Precondition&& precondition,
+                   std::vector<FieldTransform>&& field_transforms,
+                   absl::optional<FieldMask>&& mask)
+    : key_(std::move(key)),
+      precondition_(std::move(precondition)),
+      field_transforms_(std::move(field_transforms)),
+      mask_(std::move(mask)) {
+}
+
 bool Mutation::Rep::Equals(const Mutation::Rep& other) const {
   return type() == other.type() && key_ == other.key_ &&
          precondition_ == other.precondition_ &&
@@ -157,7 +167,7 @@ TransformMap Mutation::Rep::LocalTransformResults(
 
 absl::optional<Mutation> Mutation::CalculateOverlayMutation(
     const MutableDocument& doc, const absl::optional<FieldMask>& mask) {
-  if ((!doc.has_local_mutations()) || (mask.has_value() && mask->empty())) {
+  if ((!doc.has_local_mutations())) {
     return absl::nullopt;
   }
 
@@ -189,9 +199,13 @@ absl::optional<Mutation> Mutation::CalculateOverlayMutation(
           path = path.PopLast();
           value = doc_value.Get(path);
         }
-        HARD_ASSERT(value.has_value());
-        patch_value.Set(
-            path, Message<google_firestore_v1_Value>(DeepClone(value.value())));
+        if (value.has_value()) {
+          patch_value.Set(path, Message<google_firestore_v1_Value>(
+                                    DeepClone(value.value())));
+        } else {
+          patch_value.Delete(path);
+        }
+
         mask_set.insert(path);
       }
     }

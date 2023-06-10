@@ -10,7 +10,7 @@ import WatchKit
 import CoreMotion
 import CoreLocation
 import UIKit
-import Firebase
+
 
 let DID_APP_ENTER_BG_WHILE_PROCESSING = "DID_APP_ENTER_BG_WHILE_PROCESSING"
 
@@ -139,20 +139,16 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
     
     @objc func startLogSensor(){
         
-          if let data = motionManager?.accelerometerData {
-              let accX = data.acceleration.x
-              let accY = data.acceleration.y
-              let motionX = motionManager?.deviceMotion?.userAcceleration.x
-              let motionY = motionManager?.deviceMotion?.userAcceleration.y
-              let motion = motionManager?.deviceMotion?.userAcceleration.z
-              print("x: \(motionX) y: \(motionY) z: \(motion)")
-              let accZ = data.acceleration.z
+        if let data = motionManager?.deviceMotion/*motionManager?.accelerometerData*/ {
+            let accX = data.userAcceleration.x
+            let accY = data.userAcceleration.y
+            let accZ = data.userAcceleration.z
               
               let accXEdited = Double(floor(1000*accX)/1000)
               let accYEdited = Double(floor(1000*accY)/1000)
               
               
-              var accZEdited = floor(1000*(accZ))/1000
+              var accZEdited = Double(floor(1000*accZ)/1000)
               
               
               let accDate = get_time_stamp()
@@ -203,11 +199,11 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
         if(!timer.isValid){
         self.motionManager = CMMotionManager()
         LocationManager.shared.requestAccess()
-        if self.motionManager!.isAccelerometerAvailable {
+        if self.motionManager!.isDeviceMotionAvailable {
             streamingButton.setBackgroundImage(UIImage(systemName: "pause.circle"))
             motionManager?.startDeviceMotionUpdates()
-            motionManager?.startAccelerometerUpdates()
-            motionManager?.accelerometerUpdateInterval = 1.0/25
+            motionManager?.deviceMotionUpdateInterval = 1.0/25
+            
             self.timer = Timer.scheduledTimer(timeInterval: 1.0/25,
                                target: self,
                                               selector: #selector(self.startLogSensor),
@@ -220,8 +216,11 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
                     
         }
         }else{
-            if self.motionManager!.isAccelerometerActive {
+            /*if self.motionManager!.isAccelerometerActive {
                 self.motionManager?.stopAccelerometerUpdates()
+            }*/
+            if self.motionManager!.isDeviceMotionActive{
+                self.motionManager?.stopDeviceMotionUpdates()
             }
             timer.invalidate()
             LocationManager.shared.stopMonitoring()
@@ -233,7 +232,7 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
         
     }
     
-    @IBAction func SignOutClicked() {
+    /*@IBAction func SignOutClicked() {
         let firebaseAuth = Firebase.Auth.auth()
         do {
           try firebaseAuth.signOut()
@@ -241,7 +240,7 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
         }
-    }
+    }*/
     
  
     

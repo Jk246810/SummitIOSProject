@@ -17,6 +17,7 @@
 #include "Firestore/core/src/core/target.h"
 
 #include <ostream>
+#include <set>
 #include <unordered_map>
 #include <vector>
 
@@ -63,15 +64,49 @@ bool Target::IsDocumentQuery() const {
          filters_.empty();
 }
 
-// MARK: - Indexing support
+size_t Target::GetSegmentCount() const {
+  std::set<FieldPath> fields;
+  bool has_array_segment = false;
+  for (const Filter& filter : filters_) {
+    for (const FieldFilter& sub_filter : filter.GetFlattenedFilters()) {
+      // __name__ is not an explicit segment of any index, so we don't need to
+      // count it.
+      if (sub_filter.field().IsKeyFieldPath()) {
+        continue;
+      }
+
+      // ARRAY_CONTAINS or ARRAY_CONTAINS_ANY filters must be counted
+      // separately. For instance, it is possible to have an index for "a ARRAY
+      // a ASC". Even though these are on the same field, they should be counted
+      // as two separate segments in an index.
+      if (sub_filter.op() == FieldFilter::Operator::ArrayContains ||
+          sub_filter.op() == FieldFilter::Operator::ArrayContainsAny) {
+        has_array_segment = true;
+      } else {
+        fields.insert(sub_filter.field());
+      }
+    }
+  }
+  for (const auto& order_by : order_bys_) {
+    // __name__ is not an explicit segment of any index, so we don't need to
+    // count it.
+    if (!order_by.field().IsKeyFieldPath()) {
+      fields.insert(order_by.field());
+    }
+  }
+  return fields.size() + (has_array_segment ? 1 : 0);
+}
 
 std::vector<FieldFilter> Target::GetFieldFiltersForPath(
     const model::FieldPath& path) const {
   std::vector<FieldFilter> result;
-
   for (const Filter& filter : filters_) {
-    if (filter.IsAFieldFilter() && filter.field() == path) {
-      result.push_back(FieldFilter(filter));
+    if (filter.IsAFieldFilter()) {
+      FieldFilter field_filter(filter);
+      if (field_filter.field() != path) {
+        continue;
+      }
+      result.push_back(std::move(field_filter));
     }
   }
 

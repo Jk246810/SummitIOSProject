@@ -80,41 +80,44 @@ void MemoryIndexManager::DeleteFieldIndex(const model::FieldIndex& index) {
 }
 
 std::vector<model::FieldIndex> MemoryIndexManager::GetFieldIndexes(
-    const std::string& collection_group) {
+    const std::string& collection_group) const {
   (void)collection_group;
   return {};
 }
 
-std::vector<model::FieldIndex> MemoryIndexManager::GetFieldIndexes() {
+std::vector<model::FieldIndex> MemoryIndexManager::GetFieldIndexes() const {
   return {};
 }
 
-absl::optional<model::FieldIndex> MemoryIndexManager::GetFieldIndex(
-    const core::Target& target) {
-  (void)target;
-  return absl::nullopt;
+model::IndexOffset MemoryIndexManager::GetMinOffset(const core::Target&) {
+  return model::IndexOffset::None();
+}
+
+model::IndexOffset MemoryIndexManager::GetMinOffset(const std::string&) const {
+  return model::IndexOffset::None();
+}
+
+IndexManager::IndexType MemoryIndexManager::GetIndexType(const core::Target&) {
+  return IndexManager::IndexType::NONE;
 }
 
 absl::optional<std::vector<model::DocumentKey>>
-MemoryIndexManager::GetDocumentsMatchingTarget(const core::Target& target) {
-  (void)target;
-  return {};
-}
-
-absl::optional<std::string>
-MemoryIndexManager::GetNextCollectionGroupToUpdate() {
+MemoryIndexManager::GetDocumentsMatchingTarget(const core::Target&) {
+  // Field indices are not supported with memory persistence.
   return absl::nullopt;
 }
 
-void MemoryIndexManager::UpdateCollectionGroup(
-    const std::string& collection_group, model::IndexOffset offset) {
-  (void)collection_group;
-  (void)offset;
+absl::optional<std::string> MemoryIndexManager::GetNextCollectionGroupToUpdate()
+    const {
+  return absl::nullopt;
 }
 
-void MemoryIndexManager::UpdateIndexEntries(
-    const model::DocumentMap& documents) {
-  (void)documents;
+void MemoryIndexManager::UpdateCollectionGroup(const std::string&,
+                                               model::IndexOffset) {
+  // Field indices are not supported with memory persistence.
+}
+
+void MemoryIndexManager::UpdateIndexEntries(const model::DocumentMap&) {
 }
 
 }  // namespace local

@@ -9,7 +9,8 @@
 import UIKit
 import Foundation
 import FirebaseAuth
-import Firebase
+
+
 
 
 class SignInViewController: UIViewController {
@@ -36,7 +37,11 @@ class SignInViewController: UIViewController {
         if ((user) != nil){
            // print("this is the user \(user?.uid)")
             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
-            viewController.isModalInPresentation = true
+            if #available(iOS 13.0, *) {
+                viewController.isModalInPresentation = true
+            } else {
+                // Fallback on earlier versions
+            }
             self.present(viewController, animated: true, completion: nil)
         }
     }
@@ -75,7 +80,9 @@ class SignInViewController: UIViewController {
             print("\(user.email!) created")
             
             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController")
-            viewController.isModalInPresentation = true
+            if #available(iOS 13.0, *) {
+                viewController.isModalInPresentation = true
+            } 
             self.present(viewController, animated: true, completion: nil)
 
         }

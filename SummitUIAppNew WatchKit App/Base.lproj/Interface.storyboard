@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="19455" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc" pageOrientation="vertical">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="21701" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1qd-S0-eTi" pageOrientation="vertical">
     <device id="watch38"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="21615"/>
     </dependencies>
     <scenes>
         <!--InterfaceController-->
@@ -30,7 +29,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="118" y="132"/>
+            <point key="canvasLocation" x="17" y="12"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -192,7 +191,7 @@
                                 <action selector="StartStreamingSelected" destination="1qd-S0-eTi" id="fK3-IN-rU7"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Sign Out" id="PBd-Ud-ABl">
+                        <button width="1" alignment="left" title="Patient Version 2" id="PBd-Ud-ABl">
                             <fontDescription key="font" type="system" pointSize="13"/>
                             <connections>
                                 <action selector="SignOutClicked" destination="1qd-S0-eTi" id="sik-BJ-7UT"/>
@@ -204,7 +203,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="370" y="30"/>
+            <point key="canvasLocation" x="292" y="-147"/>
         </scene>
     </scenes>
     <resources>

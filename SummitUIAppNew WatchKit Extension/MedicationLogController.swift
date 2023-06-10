@@ -7,7 +7,7 @@
 
 import WatchKit
 import Foundation
-import FirebaseAuth
+//import FirebaseAuth
 
 
 class MedicationLogController:
@@ -17,7 +17,7 @@ class MedicationLogController:
     
     @IBOutlet weak var dosageFieldOutlet: WKInterfaceTextField!
     
-    lazy var user = Auth.auth().currentUser
+   // lazy var user = Auth.auth().currentUser
     var medicationTextField=""
     var dosageTextField=""
     

@@ -216,6 +216,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                 let accArray = medData["AccString"]!
                 //this is the bluetooth code, took out to test firebase implementation
                     if let char_external_write2 = self.char_external_write {
+                        print(accArray.data(using: .utf8)!)
                         self.write(raw_value: accArray.data(using: .utf8)!, characteristic: char_external_write2)
                        
                     }

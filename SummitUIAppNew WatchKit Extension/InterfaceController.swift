@@ -7,14 +7,14 @@
 
 import WatchKit
 import Foundation
-import Firebase
+//import FirebaseAuth
 
 
 class InterfaceController: WKInterfaceController {
     var usernameText: String = ""
     var passwordText: String = ""
     
-    lazy var user = Auth.auth().currentUser
+    //lazy var user = Auth.auth().currentUser
     
     override func awake(withContext context: Any?) {
 
@@ -22,10 +22,10 @@ class InterfaceController: WKInterfaceController {
         
     }
     override func didAppear(){
-        FirebaseApp.configure()
-        if ((user) != nil){
+       // FirebaseApp.configure()
+        /*if ((user) != nil){
             self.pushController(withName: "MainMenuViewController", context: nil)
-        }
+        }*/
     }
     
     override func willActivate() {
@@ -55,7 +55,7 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func signInActivated() {
         
-        Auth.auth().signIn(withEmail: usernameText, password: passwordText) { authResult, error in
+        /*Auth.auth().signIn(withEmail: usernameText, password: passwordText) { authResult, error in
             guard let user = authResult?.user, error == nil else {
                 print("authentication failed")
               return
@@ -63,7 +63,7 @@ class InterfaceController: WKInterfaceController {
             print("\(user.email!) signed in")
             self.pushController(withName: "MainMenuViewController", context: nil)
 
-        }
+        }*/
     }
     
 
