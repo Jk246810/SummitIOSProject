@@ -27,15 +27,16 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     var heartRatePeripheral: CBPeripheral!
     var dataToSend = "test_string".data(using: .ascii)
     
-    private let logger = Logger(
-      subsystem: "IOS CPSL", category: "BLE"
-    )
+    var watch_session: WCSession!
+       var num_write = 0
+       var polling_count = 0;
+       var scanStatus = false
+    
     
     var user = Auth.auth().currentUser
     var db: Firestore!
     
     @IBOutlet weak var dataTimeStamp: UILabel!
-    
     @IBOutlet weak var CTMStatus: UIImageView!
     @IBOutlet weak var CTMBattery: UILabel!
     
@@ -52,6 +53,10 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     @IBOutlet weak var TabletNumberBattery: UILabel!
     
     @IBOutlet weak var INSNumberBattery: UILabel!
+    
+    
+   
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()

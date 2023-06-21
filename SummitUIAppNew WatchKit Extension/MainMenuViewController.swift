@@ -135,12 +135,19 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
     }
            
     
-    
-    
+    var previousTimeStamp: TimeInterval = 0.0
+    var samplingInterval: [Double] = []
     
     @objc func startLogSensor(){
         
         if let data = motionManager?.deviceMotion/*motionManager?.accelerometerData*/ {
+            let currentTimeStamp = data.timestamp
+                if previousTimeStamp != 0.0 {
+                            let updateInterval = currentTimeStamp - previousTimeStamp
+                            self.samplingInterval.append(updateInterval)
+                }
+            previousTimeStamp = currentTimeStamp
+                        
             let accX = data.userAcceleration.x
             let accY = data.userAcceleration.y
             let accZ = data.userAcceleration.z
@@ -175,16 +182,16 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
                   
                 }else{
                     
-                  
-                  let accelerationValues = [
-                  "AccString": accelerometerString,
-                      ]
+                    let avgInterval = (samplingInterval.reduce(0, +))/Double(samplingInterval.count)
+                    let accelerationValues = [
+                        "AccString": accelerometerString,
+                        "AccFreq": "get_time_stamp();F(\(1.0/avgInterval))|",                    ]
               if PhoneConnection.shared.send(key: "Acc_Data", value:accelerationValues){
                   print("Here is the accelerometer String: \(accelerometerString)")
                   accelerometerString = newString
                   accByteSize = bytes
                   prevDate = currDate
-                    
+                  samplingInterval = []
                       
                 }else{
                        print("send failed")

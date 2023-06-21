@@ -218,10 +218,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last data received" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdG-gj-mGf">
-                                <rect key="frame" x="137" y="515.5" width="140" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="data time stamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScR-P0-Hea">
+                                <rect key="frame" x="145.5" y="515.5" width="123" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="giO-8f-3XG"/>
+                                    <constraint firstAttribute="width" constant="123" id="OUI-CJ-orv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -233,13 +233,13 @@
                         <constraints>
                             <constraint firstItem="aFZ-Ie-4Xd" firstAttribute="centerX" secondItem="fHY-wM-Qyg" secondAttribute="centerX" id="3PA-sg-UIX"/>
                             <constraint firstItem="aFZ-Ie-4Xd" firstAttribute="centerX" secondItem="fHY-wM-Qyg" secondAttribute="centerX" id="6Bi-5B-m38"/>
-                            <constraint firstItem="VdG-gj-mGf" firstAttribute="centerX" secondItem="fHY-wM-Qyg" secondAttribute="centerX" id="8jU-f6-6jK"/>
-                            <constraint firstItem="VdG-gj-mGf" firstAttribute="top" secondItem="aFZ-Ie-4Xd" secondAttribute="bottom" constant="30" id="GlH-af-Caa"/>
                             <constraint firstItem="aFZ-Ie-4Xd" firstAttribute="top" secondItem="fMy-K5-rr5" secondAttribute="bottom" constant="59" id="INB-pv-bMb"/>
+                            <constraint firstItem="ScR-P0-Hea" firstAttribute="top" secondItem="aFZ-Ie-4Xd" secondAttribute="bottom" constant="30" id="MSA-Xn-SqY"/>
                             <constraint firstItem="oEf-fh-RML" firstAttribute="trailing" secondItem="tqW-1v-JLp" secondAttribute="trailing" constant="20" id="OYd-eJ-IUi"/>
                             <constraint firstItem="tqW-1v-JLp" firstAttribute="leading" secondItem="oEf-fh-RML" secondAttribute="leading" constant="20" id="P5V-Cc-JQI"/>
                             <constraint firstItem="fMy-K5-rr5" firstAttribute="leading" secondItem="oEf-fh-RML" secondAttribute="leading" constant="20" id="PiV-xo-1ph"/>
                             <constraint firstItem="fMy-K5-rr5" firstAttribute="top" secondItem="21E-dn-9Jo" secondAttribute="bottom" constant="50" id="QDg-fu-90D"/>
+                            <constraint firstItem="ScR-P0-Hea" firstAttribute="centerX" secondItem="fHY-wM-Qyg" secondAttribute="centerX" id="WJv-a2-9qz"/>
                             <constraint firstItem="oEf-fh-RML" firstAttribute="trailing" secondItem="21E-dn-9Jo" secondAttribute="trailing" constant="20" id="aJ5-1R-BpD"/>
                             <constraint firstItem="21E-dn-9Jo" firstAttribute="top" secondItem="tqW-1v-JLp" secondAttribute="bottom" constant="20" id="qZQ-0M-DBP"/>
                             <constraint firstItem="tqW-1v-JLp" firstAttribute="top" secondItem="oEf-fh-RML" secondAttribute="top" constant="20" id="tLg-1r-Kgk"/>
@@ -255,7 +255,7 @@
                         <outlet property="TabletNumberBattery" destination="1MV-ZV-4SY" id="PW1-hh-MMk"/>
                         <outlet property="TabletStatus" destination="6Hd-BX-gcH" id="L2X-W0-0x2"/>
                         <outlet property="bluetoothConnection" destination="fMy-K5-rr5" id="8Eb-cq-V14"/>
-                        <outlet property="dataTimeStamp" destination="VdG-gj-mGf" id="jSY-Bu-ZOF"/>
+                        <outlet property="dataTimeStamp" destination="ScR-P0-Hea" id="9ou-H1-5Y5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBk-o9-qCP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
