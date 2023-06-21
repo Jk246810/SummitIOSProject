@@ -18,6 +18,7 @@ import os.log
 let UartGattServiceId = CBUUID(string: "0000FFF0-0000-1000-8000-00805f9b34fb")
 let UartGattCharacteristicReceiveId = CBUUID(string: "0000FFF1-0000-1000-8000-00805f9b34fb")
 let UartGattCharacteristicSendId = CBUUID(string: "0000FFF2-0000-1000-8000-00805f9b34fb")
+var INDEX = 0;
 
 @available(iOS 14.0, *)
 class HomeViewController: UIViewController, WCSessionDelegate {
@@ -32,7 +33,9 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     
     var user = Auth.auth().currentUser
     var db: Firestore!
-   
+    
+    @IBOutlet weak var dataTimeStamp: UILabel!
+    
     @IBOutlet weak var CTMStatus: UIImageView!
     @IBOutlet weak var CTMBattery: UILabel!
     
@@ -218,6 +221,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                     if let char_external_write2 = self.char_external_write {
                         print(accArray.data(using: .utf8)!)
                         self.write(raw_value: accArray.data(using: .utf8)!, characteristic: char_external_write2)
+                        self.dataTimeStamp.text = self.getTimeStamp()
                        
                     }
                 //this is the code to upload to firestore
@@ -235,6 +239,39 @@ class HomeViewController: UIViewController, WCSessionDelegate {
             }
         }
     }
+    
+    func getTimeStamp() -> String {
+        var date = Date()
+        if #available(iOS 15, *) {
+            date = Date.now
+        } else {
+            print("watch os 8 not available")
+
+        }
+        INDEX+=1
+        let ms_since_1970 = date.timeIntervalSince1970
+        let milisec = Int64(ms_since_1970*1000)%1000
+        let Datefrom1970 = Date(timeIntervalSince1970: Double(Int(ms_since_1970)))
+        
+        let format = DateFormatter()
+        format.dateFormat = "HH:mm:ss"
+        var stringMiliSec = String(milisec)
+        let milisecFormat = "FFF"
+       
+        while(stringMiliSec.count<milisecFormat.count){
+                stringMiliSec = "0"+stringMiliSec
+        }
+        
+        var timestamp = format.string(from: Datefrom1970) + ":" + stringMiliSec
+        
+        
+        //timestamp = String(INDEX) + timestamp
+        return timestamp
+        
+        
+    }
         
 }
+
+
 

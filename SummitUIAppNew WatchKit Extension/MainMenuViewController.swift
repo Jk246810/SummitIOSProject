@@ -63,6 +63,7 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
     override func awake(withContext context: Any?){
         super.awake(withContext: context)
         _ = PhoneConnection.shared
+        
         //streamingButton.setEnabled(false)
         //streamingButton.setHidden(true)
         
@@ -202,9 +203,9 @@ class MainMenuViewController: BusableController, WKExtensionDelegate {
         if self.motionManager!.isDeviceMotionAvailable {
             streamingButton.setBackgroundImage(UIImage(systemName: "pause.circle"))
             motionManager?.startDeviceMotionUpdates()
-            motionManager?.deviceMotionUpdateInterval = 1.0/25
+            motionManager?.deviceMotionUpdateInterval = 1.0/35
             
-            self.timer = Timer.scheduledTimer(timeInterval: 1.0/25,
+            self.timer = Timer.scheduledTimer(timeInterval: 1.0/35,
                                target: self,
                                               selector: #selector(self.startLogSensor),
                                userInfo: nil,

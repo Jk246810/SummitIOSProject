@@ -191,7 +191,7 @@
                                 <action selector="StartStreamingSelected" destination="1qd-S0-eTi" id="fK3-IN-rU7"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Patient Version 2" id="PBd-Ud-ABl">
+                        <button width="1" alignment="left" title="Patient Version 3" id="PBd-Ud-ABl">
                             <fontDescription key="font" type="system" pointSize="13"/>
                             <connections>
                                 <action selector="SignOutClicked" destination="1qd-S0-eTi" id="sik-BJ-7UT"/>

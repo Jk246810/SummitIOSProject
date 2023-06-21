@@ -209,11 +209,19 @@
                                     <action selector="signOutClicked:" destination="f16-yh-Iov" eventType="touchUpInside" id="a22-ai-o1S"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient Version 2 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFZ-Ie-4Xd">
-                                <rect key="frame" x="147.5" y="466" width="119" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient Version 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFZ-Ie-4Xd">
+                                <rect key="frame" x="134.5" y="465" width="145" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="119" id="Avb-Qk-PQ1"/>
-                                    <constraint firstAttribute="height" constant="21" id="dYg-YI-YKp"/>
+                                    <constraint firstAttribute="width" constant="145" id="ZVm-DW-EZB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last data received" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdG-gj-mGf">
+                                <rect key="frame" x="137" y="515.5" width="140" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="giO-8f-3XG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -223,8 +231,11 @@
                         <viewLayoutGuide key="safeArea" id="oEf-fh-RML"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aFZ-Ie-4Xd" firstAttribute="top" secondItem="fMy-K5-rr5" secondAttribute="bottom" constant="60" id="1TG-Kc-k98"/>
+                            <constraint firstItem="aFZ-Ie-4Xd" firstAttribute="centerX" secondItem="fHY-wM-Qyg" secondAttribute="centerX" id="3PA-sg-UIX"/>
                             <constraint firstItem="aFZ-Ie-4Xd" firstAttribute="centerX" secondItem="fHY-wM-Qyg" secondAttribute="centerX" id="6Bi-5B-m38"/>
+                            <constraint firstItem="VdG-gj-mGf" firstAttribute="centerX" secondItem="fHY-wM-Qyg" secondAttribute="centerX" id="8jU-f6-6jK"/>
+                            <constraint firstItem="VdG-gj-mGf" firstAttribute="top" secondItem="aFZ-Ie-4Xd" secondAttribute="bottom" constant="30" id="GlH-af-Caa"/>
+                            <constraint firstItem="aFZ-Ie-4Xd" firstAttribute="top" secondItem="fMy-K5-rr5" secondAttribute="bottom" constant="59" id="INB-pv-bMb"/>
                             <constraint firstItem="oEf-fh-RML" firstAttribute="trailing" secondItem="tqW-1v-JLp" secondAttribute="trailing" constant="20" id="OYd-eJ-IUi"/>
                             <constraint firstItem="tqW-1v-JLp" firstAttribute="leading" secondItem="oEf-fh-RML" secondAttribute="leading" constant="20" id="P5V-Cc-JQI"/>
                             <constraint firstItem="fMy-K5-rr5" firstAttribute="leading" secondItem="oEf-fh-RML" secondAttribute="leading" constant="20" id="PiV-xo-1ph"/>
@@ -244,6 +255,7 @@
                         <outlet property="TabletNumberBattery" destination="1MV-ZV-4SY" id="PW1-hh-MMk"/>
                         <outlet property="TabletStatus" destination="6Hd-BX-gcH" id="L2X-W0-0x2"/>
                         <outlet property="bluetoothConnection" destination="fMy-K5-rr5" id="8Eb-cq-V14"/>
+                        <outlet property="dataTimeStamp" destination="VdG-gj-mGf" id="jSY-Bu-ZOF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBk-o9-qCP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
