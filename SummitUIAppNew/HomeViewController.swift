@@ -13,12 +13,12 @@ import WatchConnectivity
 import UserNotifications
 import FirebaseMessaging
 import CoreBluetooth
-import os.log
+
 
 let UartGattServiceId = CBUUID(string: "0000FFF0-0000-1000-8000-00805f9b34fb")
 let UartGattCharacteristicReceiveId = CBUUID(string: "0000FFF1-0000-1000-8000-00805f9b34fb")
 let UartGattCharacteristicSendId = CBUUID(string: "0000FFF2-0000-1000-8000-00805f9b34fb")
-var INDEX = 0;
+
 
 @available(iOS 14.0, *)
 class HomeViewController: UIViewController, WCSessionDelegate {
@@ -26,6 +26,8 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     var centralManager: CBCentralManager!
     var heartRatePeripheral: CBPeripheral!
     var dataToSend = "test_string".data(using: .ascii)
+    
+    var timer = Timer()
     
     var watch_session: WCSession!
        var num_write = 0
@@ -56,6 +58,33 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     
     
    
+    @IBOutlet weak var Central_State: UILabel!
+    @IBOutlet weak var Peripheral_State: UILabel!
+    @IBOutlet weak var Session_State: UILabel!
+        
+    @IBOutlet weak var isScanning: UILabel!
+        
+    @IBOutlet weak var Error_Message: UILabel!
+        
+    @IBOutlet weak var num_write_display: UILabel!
+        
+    @IBOutlet weak var status: UILabel!
+    
+        
+    func removeFirebaseMarkers(){
+        CTMStatus?.isHidden = true
+        
+        CTMNumberBattery?.isHidden = true
+        INSStatus?.isHidden = true
+        
+        INSNumberBattery.isHidden = true
+        TabletStatus.isHidden = true
+        
+        TabletNumberBattery.isHidden = true
+        
+    }
+    
+    
         
     
     override func viewDidLoad() {
@@ -63,6 +92,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         self.CTMStatus.tintColor = UIColor.red
         self.INSStatus.tintColor = UIColor.red
         self.TabletStatus.tintColor = UIColor.red
+        removeFirebaseMarkers()
         if((user) != nil){
             db = Firestore.firestore()
             registerAPNSwithFirebase()
@@ -70,10 +100,35 @@ class HomeViewController: UIViewController, WCSessionDelegate {
             enableBatteryListener()
             enableBatteryLevel()
         }
-        centralManager = CBCentralManager(delegate: self, queue: nil)
         
+        centralManager = CBCentralManager(delegate: self, queue: DispatchQueue.main) // Central Manager can only be on the main queue!!
+                
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(statusUpdateCheck), userInfo: nil, repeats: true)
         
     }
+    
+    @objc func statusUpdateCheck() {
+           if (centralManager != nil) {
+               Central_State.text = centralManagerStateToString(centralManager.state);
+           } else {
+               Central_State.text = "nil";
+           }
+           if (heartRatePeripheral != nil) {
+               Peripheral_State.text = peripheralStateToString(heartRatePeripheral.state);
+           } else {
+               Peripheral_State.text = "nil";
+           }
+           if (watch_session != nil) {
+               Session_State.text = sessionStateToString(watch_session.activationState);
+           } else {
+               Session_State.text = "nil";
+           }
+           isScanning.text = String(centralManager.isScanning);
+       }
+    
+    func display_error_Msg(Msg:String) {
+            Error_Message.text = Msg;
+        }
     
     
     @IBAction func signOutClicked(_ sender: Any) {
@@ -106,6 +161,7 @@ class HomeViewController: UIViewController, WCSessionDelegate {
             let session = WCSession.default
             session.delegate = self
             session.activate()
+            watch_session = session;
         }
     }
     func enableBatteryListener(){
@@ -220,21 +276,23 @@ class HomeViewController: UIViewController, WCSessionDelegate {
                     "Date":  medData["Date"] as Any
                 ])
             }
-            if let medData = message["Acc_Data"] as? [String:String]{
-                let accArray = medData["AccString"]!
-                //this is the bluetooth code, took out to test firebase implementation
-                    if let char_external_write2 = self.char_external_write {
-                        print(accArray.data(using: .utf8)!)
-                        self.write(raw_value: accArray.data(using: .utf8)!, characteristic: char_external_write2)
-                        self.dataTimeStamp.text = self.getTimeStamp()
-                       
-                    }
-                //this is the code to upload to firestore
-               /* print("Here is the following value\(accArray)")
-                Firestore.firestore().collection("Users_Collection").document(self.user!.uid).collection("Acceleration Data").document().setData([
-                    "AccelerationString": accArray as Any
-                ])*/
-               
+            if let medData = message["Acc_Data"] as? [String:Any]{
+                let accArray = medData["AccString"] as! String
+                let freqArray = medData["AccFreq"] as! String
+                
+                
+                if let char_external_write2 = self.char_external_write {
+                    self.write(value: accArray.data(using: .utf8)!, characteristic: char_external_write2)
+                    print("sent data to bluetooth")
+                    print(Date())
+                   
+                }
+                
+                if let char_external_write2 = self.char_external_write {
+                    self.write(value: freqArray.data(using: .utf8)!, characteristic: char_external_write2)
+                }
+                
+                
             }
             if let userFeedback = message["Feedback"] as? [String:Any]{
                 Firestore.firestore().collection("Users_Collection").document(self.user!.uid).collection("Feedback").document().setData([
@@ -245,36 +303,19 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         }
     }
     
-    func getTimeStamp() -> String {
-        var date = Date()
-        if #available(iOS 15, *) {
-            date = Date.now
-        } else {
-            print("watch os 8 not available")
-
-        }
-        INDEX+=1
-        let ms_since_1970 = date.timeIntervalSince1970
-        let milisec = Int64(ms_since_1970*1000)%1000
-        let Datefrom1970 = Date(timeIntervalSince1970: Double(Int(ms_since_1970)))
-        
-        let format = DateFormatter()
-        format.dateFormat = "HH:mm:ss"
-        var stringMiliSec = String(milisec)
-        let milisecFormat = "FFF"
-       
-        while(stringMiliSec.count<milisecFormat.count){
-                stringMiliSec = "0"+stringMiliSec
-        }
-        
-        var timestamp = format.string(from: Datefrom1970) + ":" + stringMiliSec
-        
-        
-        //timestamp = String(INDEX) + timestamp
-        return timestamp
-        
-        
-    }
+    
+    func sessionStateToString(_ state: WCSessionActivationState) -> String {
+           switch state {
+           case .notActivated:
+               return "Not Activated"
+           case .inactive:
+               return "Inactive"
+           case .activated:
+               return "Activated"
+           @unknown default:
+               return "Unknown State"
+           }
+       }
         
 }
 
